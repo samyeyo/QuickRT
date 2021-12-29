@@ -12,9 +12,8 @@ QuickRT is a LuaRT console REPL that lets you test, prototype, and learn very qu
 [Getting started](#getting-started) |
 [Installation](#installation) 
 
+![Demo][demo] 
 </div>
-
-![Demo][demo]
 
 ## Features
 
