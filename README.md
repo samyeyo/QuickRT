@@ -14,30 +14,28 @@ QuickRT is a LuaRT console REPL that lets you test, prototype, and learn very qu
 
 ![Demo][demo] 
 </div>
-
 ## Features
 
 - Old school console interpreter.
 - Lua colored syntax highlighting.
 - Multiline editing with indentation.
 - Autocompletion.
-- History
+- Command history.
 - LuaRT documentation included.
 - Support UTF8 characters.
 
 ## Installation
 
-[LuaRT](https://www.luart.org) should have been previously installed. Open a LuaRT console and go to the directory where you downloaded QuickRT source files.
+[LuaRT](https://www.luart.org) should have been previously installed. Open a LuaRT console and go to the directory where you've downloaded QuickRT source files.
 Then type the following command :
 
 ```batch
 luart quickrt.lua
 ```
 
-
 ## Getting started
 
-To start, type the following commands :
+To get you started, type the following commands :
 
 ```lua
 help("topic")      -- search help for topic
@@ -48,6 +46,6 @@ print("hello")     -- calls a function and shows its result
 pr                 -- type "pr" then press the TAB key to use autocompletion (should find 'print')
 ```
 
-You can use last entered commands by pressing the UP and Down arrow keys.
+You can use last entered commands by pressing the UP and DOWN arrow keys.
 
 [demo]: contrib/QuickRT.webp
