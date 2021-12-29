@@ -2,11 +2,11 @@
 
 # QuickRT
 
-![Made with LuaRT](https://badgen.net/badge/Made%20with/LuaRT/yellow)
+[![Made with LuaRT](https://badgen.net/badge/Made%20with/LuaRT/yellow)](https://www.luart.org/)
 ![Windows](https://badgen.net/badge/Windows/Vista%20and%20later/blue?icon=windows)
-![QuickRT license](https://badgen.net/badge/License/MIT/green)
+[![QuickRT license](https://badgen.net/badge/License/MIT/green)](#)
 
-QuickRT is a LuaRT console REPL that lets you test, prototype, and learn very quickly.
+QuickRT is a LuaRT console REPL that allows you to easily prototype, test, and learn Lua programming.
 
 [Features](#features) |
 [Getting started](#getting-started) |
