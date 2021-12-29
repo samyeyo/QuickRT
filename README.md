@@ -14,6 +14,7 @@ QuickRT is a LuaRT console REPL that lets you test, prototype, and learn very qu
 
 ![Demo][demo] 
 </div>
+
 ## Features
 
 - Old school console interpreter.
