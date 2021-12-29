@@ -56,7 +56,6 @@ while true do
 			-- Eval
 			local func, err = load("return "..cmd, nil, nil, env)	
 			if func == fail then
-				print("return "..cmd.." failed")
 				func, err = load(cmd, nil, nil, env)
 			end	
 			if func ~= fail then
