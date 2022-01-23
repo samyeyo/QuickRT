@@ -25,14 +25,15 @@ end
 local function write_module(name, mod)
 	console.writecolor("cyan", "\nHelp item  : ")
 	console.writecolor("brightwhite", name:match("%a+"))
+	name = name:match("%a+").."."
 	console.writecolor("cyan", "\nCategory   : ")
 	console.writecolor("gray", "Module\n")
 	console.writecolor("cyan", "\nDescription: ")
 	console.write(mod.desc)
-	console.writecolor("cyan", "\nContains: ")
+	console.writecolor("cyan", "\n\nContains: ")
 	for key, item in pairs(db) do
-		if key:search("net.") and not key:search("constructor") then
-			local helpitem = key:gsub("net.", ""):gsub("%b()", ""):gsub("%s%a+ %a+$", ""):gsub("iterator", "")
+		if key:search(name) and not key:search("constructor") then
+			local helpitem = key:gsub(name, ""):gsub("%s?%b()", "()"):gsub("readonly property", ""):gsub("read/write property", ""):gsub("iterator", "")
 			if helpitem:lower() == helpitem  then
 				console.write(helpitem.." ")
 			else
@@ -58,7 +59,7 @@ local function write_object(name, obj)
 	console.writecolor("cyan", "\nCategory   : ")
 	console.writecolor("gray", "Object\n")
 	console.writecolor("cyan", "Module     : ")
-	console.writecolor("gray", name:match("(%a+)%."))
+	console.writecolor("yellow", name:match("(%a+)%."))
 	console.writecolor("cyan", "\n\nDescription: ")
 	console.write(obj.desc)
 end
@@ -84,13 +85,14 @@ end
 
 local function write_function(name, func)
 	console.writecolor("cyan", "\nHelp item  : ")
-	console.writecolor("brightwhite", name:match("^([%a%.]+)%("))
+	console.writecolor("brightwhite", name:match("^([%a%.]+)%s*%("))
 	console.writecolor("gray", (name:match("%([%a%p%s]+%)") or "()"))
 	console.writecolor("cyan", "\nCategory   : ")
 	console.writecolor("gray", "Function\n")
 	local mod = name:match("(%a+)%.")
 	if mod ~= nil then
-		console.writecolor("cyan", "Module     : "..mod)
+		console.writecolor("cyan", "Module     : ")
+		console.writecolor("yellow", mod)
 	end
 	console.writecolor("cyan", "\nDescription: ")
 	console.writeln(func.desc)
@@ -118,7 +120,7 @@ local function search(helpitem)
 		searchfor(helpitem, "method", write_method) or
 		searchfor(helpitem, "%(", write_function)
 		if not result then
-			console.writecolor("magenta", "no help entry for ")
+			console.writecolor("lightred", "no help entry for ")
 			console.writecolor("lightgreen", helpitem)
 		end
 	end
