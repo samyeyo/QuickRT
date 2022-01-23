@@ -2,19 +2,18 @@
 
 # QuickRT
 
-![Made with LuaRT](https://badgen.net/badge/Made%20with/LuaRT/yellow)
+[![Made with LuaRT](https://badgen.net/badge/Made%20with/LuaRT/yellow)](https://www.luart.org/)
 ![Windows](https://badgen.net/badge/Windows/Vista%20and%20later/blue?icon=windows)
-![QuickRT license](https://badgen.net/badge/License/MIT/green)
+[![QuickRT license](https://badgen.net/badge/License/MIT/green)](#)
 
-QuickRT is a LuaRT console REPL that lets you test, prototype, and learn very quickly.
+QuickRT is a LuaRT console REPL that allows you to easily prototype, test, and learn Lua programming.
 
 [Features](#features) |
 [Getting started](#getting-started) |
 [Installation](#installation) 
 
+![Demo][demo] 
 </div>
-
-![Demo][demo]
 
 ## Features
 
@@ -22,23 +21,22 @@ QuickRT is a LuaRT console REPL that lets you test, prototype, and learn very qu
 - Lua colored syntax highlighting.
 - Multiline editing with indentation.
 - Autocompletion.
-- History
+- Command history.
 - LuaRT documentation included.
 - Support UTF8 characters.
 
 ## Installation
 
-[LuaRT](https://www.luart.org) should have been previously installed. Open a LuaRT console and go to the directory where you downloaded QuickRT source files.
+[LuaRT](https://www.luart.org) should have been previously installed. Open a LuaRT console and go to the directory where you've downloaded QuickRT source files.
 Then type the following command :
 
 ```batch
 luart quickrt.lua
 ```
 
-
 ## Getting started
 
-To start, type the following commands :
+To get you started, type the following commands :
 
 ```lua
 help("topic")      -- search help for topic
@@ -49,6 +47,6 @@ print("hello")     -- calls a function and shows its result
 pr                 -- type "pr" then press the TAB key to use autocompletion (should find 'print')
 ```
 
-You can use last entered commands by pressing the UP and Down arrow keys.
+You can use last entered commands by pressing the UP and DOWN arrow keys.
 
 [demo]: contrib/QuickRT.webp
