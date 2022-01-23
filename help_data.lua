@@ -1,13 +1,4 @@
-﻿-- | LuaRT - A Windows programming framework for Lua
--- | Luart.org, Copyright (c) Tine Samir 2022.
--- | See Copyright Notice in LICENSE.TXT
--- |-----------------------------------------------------
--- | help_data.lua | LuaRT 0.9.4 help in Lua table format
-
-
-
-
-return {
+﻿return {
 	['each(iterable) iterator'] = {
 	desc = [[Iterate on a table or Object over values only.]],
 	addr = 'https:\\\\www.luart.org\\doc\\base\\each.html',
@@ -38,7 +29,7 @@ return {
 	params = {
 		{
 			name = [[from]],
-			desc = [[ A table or an other previously declared Object that serves as a prototype to define a new custom type. ]],
+			desc = [[ A table or an other previously declred Object that serves as a prototype to define a new custom type. ]],
 			color = 'brightwhite'}, nil} },
 	['type(var)'] = {
 	desc = [[Returns the type of a variable.]],
@@ -69,12 +60,12 @@ return {
 	addr = 'https:\\\\www.luart.org\\doc\\console\\console-bgcolor.html',
 	params = {} },
 	['console.clear(color)'] = {
-	desc = [[Clears the console (equivalent of the famoud DOS command cls).]],
+	desc = [[Clears the console screen (equivalent of the famous DOS command cls).]],
 	addr = 'https:\\\\www.luart.org\\doc\\console\\console-clear.html',
 	params = {
 		{
 			name = [[color]],
-			desc = [[ An optional string indicating the color to clear the screen with. See console.bgcolor property to list the possible colors. If the color is not provided, use the current background color. Once the console is cleared, the function revert back to the previous background color. ]],
+			desc = [[ An optional string indicating the color to clear the console screen with. See console.bgcolor property to list the possible colors. If the color is not provided, use the current background color. Once the console is cleared, the function revert back to the previous background color. ]],
 			color = 'lightyellow'}, nil} },
 	['console.color read/write property'] = {
 	desc = [[The console.color property sets or gets the current console text color. The color is represented by a string Possible values are : 
@@ -99,6 +90,14 @@ return {
 	['console.echo read/write property'] = {
 	desc = [[The console.echo property is a boolean value that sets/gets the current console ECHO mode.A console.echo property set to true means that each character entered in stdin will be written to the console stdout file. It's the default mode. Set that property to false if you don't want to print to the console the entered text (for example, when typing passwords). Set that property to a single char string to print to the console that character when typing on the keyboard.]],
 	addr = 'https:\\\\www.luart.org\\doc\\console\\console-echo.html',
+	params = {} },
+	['console.font read/write property'] = {
+	desc = [[Get the current console font, a string value that represent the font name. To set the console.font property, you can assign a string that represent either a font name of an installed system font, or a font file (*.ttf, *.fon...). A File can also be provided, representing a font file.]],
+	addr = 'https:\\\\www.luart.org\\doc\\console\\console-font.html',
+	params = {} },
+	['console.font read/write property'] = {
+	desc = [[Get or set the console font size, a number that represent the font size in pixels.]],
+	addr = 'https:\\\\www.luart.org\\doc\\console\\console-fontsize.html',
 	params = {} },
 	['console.fullscreen read/write property'] = {
 	desc = [[Gets/sets the console fullscreen mode (really fullscreen without the window frame and title bar). To go fullscreen, set the property to true To revert back to normal mode (original size with window frame and title bar) set the property to false. The user can revert back to normal mode by pressing ALT+RETURN.]],
@@ -183,7 +182,7 @@ return {
 		{
 			name = [[str1, str2,...]],
 			desc = [[ The strings to write to the console. If the argument is not a string, the function converts it internally using the tostring function. The function does not return to next line after printing the characters. If you want to add a newline character, use console.writeln() instead. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['console.writecolor(color, str1, str2, str3...)'] = {
 	desc = [[Writes colored output to the console using console.stdout. The function change the color of the text (not its background). Then the function set back the text color to the previous one. Console.write() can write more than one string, each string is separated with a space character.]],
 	addr = 'https:\\\\www.luart.org\\doc\\console\\console-writecolor.html',
@@ -207,11 +206,11 @@ return {
         - "lightpurple" 
         - "lightyellow" 
         - "brightwhite" ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[str1, str2,...]],
 			desc = [[ The strings to write to the console. If the argument is not a string, the function converts it internally using the tostring function. The function does not return to next line after printing the characters. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['console.writeln(str1, str2, str3...)'] = {
 	desc = [[Writes to the console using console.stdout, adding a last newline character. Contrary to console.stdout:writeln(), console.writeln() can write more than one string, each string is separated with a space character.]],
 	addr = 'https:\\\\www.luart.org\\doc\\console\\console-writeln.html',
@@ -219,7 +218,7 @@ return {
 		{
 			name = [[str1, str2,...]],
 			desc = [[ Optional strings to write to the console. If the argument is not a string, the function converts it internally using the tostring function. Calling the function without any argument writes "\n" ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['console.x read/write property'] = {
 	desc = [[The console.x property gets or sets the current cursor column position.]],
 	addr = 'https:\\\\www.luart.org\\doc\\console\\console-x.html',
@@ -257,15 +256,15 @@ return {
         - "3des" : triple data encryption standard with 168 bits (21 bytes) key length (block cipher) 
         - "rc2" : Rivest cipher 2 with 40 to 128 bits (5...16 bytes) key length (block cipher) 
         - "rc4" : Rivest cipher 4 with 40 to 128 bits (5...16 bytes) key length (stream cipher) ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[key]],
 			desc = [[ A string or a Buffer value, containing the key. If the key is longer than the expected key length, only the first given bytes are used. An error occurs if the key length is too small. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[iv]],
 			desc = [[ An optional string or Buffer value, containing an initialization vector. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[mode]],
 			desc = [[ An optional string to specify the cipher mode : 
@@ -273,7 +272,7 @@ return {
         - "cfb" : cipher feedback mode 
         - "ecb" : electronic codebook mode 
         - "cts" : ciphertext stealing mode ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Cipher:decrypt(data) method'] = {
 	desc = [[Decrypt the specified data.]],
 	addr = 'https:\\\\www.luart.org\\doc\\crypto\\cipher-decrypt.html',
@@ -313,7 +312,7 @@ return {
 		{
 			name = [[data]],
 			desc = [[ A string or a Buffer. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['crypto.decrypt(data, key, init , mode)'] = {
 	desc = [[Decrypts the data with the specified key, using the current crypto.algorithm.]],
 	addr = 'https:\\\\www.luart.org\\doc\\crypto\\decrypt.html',
@@ -321,15 +320,15 @@ return {
 		{
 			name = [[data]],
 			desc = [[ A string or a Buffer to be decrypted. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[key]],
 			desc = [[ A string or a Buffer to be used as the key for decryption. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[init]],
 			desc = [[ An optional string or a Buffer to be used as vector initialization. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[mode]],
 			desc = [[ An optional string that specify the mode that was used for encryption: 
@@ -337,7 +336,7 @@ return {
         - "cfb" : For 8bit cipher feedback mode. 
         - "ecb" : For electronic book mode. 
         - "cts" : For ciphertext stealing mode. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['crypto.encrypt(data, key, init , mode)'] = {
 	desc = [[Encrypts the data with the specified key, using the current crypto.algorithm.]],
 	addr = 'https:\\\\www.luart.org\\doc\\crypto\\encrypt.html',
@@ -345,15 +344,15 @@ return {
 		{
 			name = [[data]],
 			desc = [[ A string or a Buffer to be encrypted. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[key]],
 			desc = [[ A string or a Buffer to be used as the key for encryption. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[init]],
 			desc = [[ An optional string or a Buffer to be used as vector initialization.If not provided, a default zero bytes vector is used. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[mode]],
 			desc = [[ An optional string that specify the encryption mode : 
@@ -361,7 +360,7 @@ return {
         - "cfb" : For 8bit cipher feedback mode. 
         - "ecb" : For electronic book mode. 
         - "cts" : For ciphertext stealing mode. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['crypto.generate(length)'] = {
 	desc = [[Generate binary data with cryptographically random bytes.]],
 	addr = 'https:\\\\www.luart.org\\doc\\crypto\\generate.html',
@@ -382,11 +381,11 @@ return {
         - "sha256" for SHA256 hash algorithm 
         - "sha384" for SHA384 hash algorithm 
         - "sha512" for SHA512 hash algorithm ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[data]],
 			desc = [[ A string or a Buffer that contains the data to hash. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['crypto module'] = {
 	desc = [[The crypto module provides properties and functions for cryptography facilities, such as hashing functions and encryption/decryption for various algorithms.]],
 	addr = 'https:\\\\www.luart.org\\doc\\crypto\\index.html',
@@ -395,8 +394,8 @@ return {
 	desc = [[Here you will find the essentials to take your first steps with Luart, regardless of whether you are an experienced developer or a beginner. With Luart, you can use and learn the Lua programming language easily thanks to its specific implementation on Windows. It only takes a few lines of code to make a simple app, so it's time to get started!]],
 	addr = 'https:\\\\www.luart.org\\doc\\index.html',
 	params = {} },
-	[''] = {
-	desc = [[]],
+	['Luart standard modules'] = {
+	desc = [[Luart includes a specific standard library that enhances capabilities for Lua development on Windows operating systems. Please click on the following modules to get more help : sys console net zip crypto ui]],
 	addr = 'https:\\\\www.luart.org\\doc\\modules.html',
 	params = {} },
 	['Ftp.active read/write property'] = {
@@ -414,7 +413,7 @@ return {
 		{
 			name = [[cmd]],
 			desc = [[ A string that contains the command to execute. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['net.Ftp(url, username, password) constructor'] = {
 	desc = [[The Ftp constructor returns a Ftp value representing a FTP client and connects it to the FTP server at the given URL, using provided authentication.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-constructor.html',
@@ -422,15 +421,15 @@ return {
 		{
 			name = [[url]],
 			desc = [[ A string representing a valid URL to connect to the FTP server. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[username]],
 			desc = [[ A string representing the username (use "anonymous" for anonymous access if supported by the server). ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[password]],
 			desc = [[ A string representing the password (use any string for anonymous access). By default, Ftp connection is open in passive mode. See the Ftp.active property. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Ftp.currentdir read/write property'] = {
 	desc = [[The Ftp.currentdir property gets or sets the current directory on the FTP server as a string.Returns nil if the value could not be retrieved (get more information with the net.error property).]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-currentdir.html',
@@ -442,7 +441,7 @@ return {
 		{
 			name = [[remote_file]],
 			desc = [[ A string that contains the name of the file to be retrieved. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Ftp.hostname readonly property'] = {
 	desc = [[The Ftp.hostname property gets the current hostname string used for connection to the FTP server or nil if connection have been closed.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-hostname.html',
@@ -454,7 +453,7 @@ return {
 		{
 			name = [[search_path]],
 			desc = [[ An optional string that contains a valid directory path or file name. The string can contain wildcards, but no blank spaces are allowed.If not specified, iterate over all current directory contents. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Ftp:makedir(path)'] = {
 	desc = [[Creates a new directory on the FTP server.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-makedir.html',
@@ -462,7 +461,7 @@ return {
 		{
 			name = [[path]],
 			desc = [[ A string that contains the name of the directory to be created. This can be either a fully qualified path or a name relative to the current FTP directory. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Ftp:movefile(path, newpath)'] = {
 	desc = [[Moves the specified file from the FTP server.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-movefile.html',
@@ -470,11 +469,11 @@ return {
 		{
 			name = [[path]],
 			desc = [[ A string that contains the file path (partially or fully qualified file names relative to the current FTP directory can be used). ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[newpath]],
 			desc = [[ A string that contains he new file path (partially or fully qualified file names relative to the current FTP directory can be used). ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Ftp:open(url, username, password)'] = {
 	desc = [[Connect the Ftp client to a new URL, closing the current connection.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-open.html',
@@ -482,15 +481,15 @@ return {
 		{
 			name = [[url]],
 			desc = [[ A string representing a valid URL to connect to the FTP server. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[username]],
 			desc = [[ A string representing the username (use "anonymous" for anonymous access if supported by the server). ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[password]],
 			desc = [[ A string representing the password (use any string for anonymous access). ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Ftp.port readonly property'] = {
 	desc = [[The Ftp.port property gets the current port used for connection to the FTP server or nil if connection have been closed.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-port.html',
@@ -502,7 +501,7 @@ return {
 		{
 			name = [[path]],
 			desc = [[ A string that contains the name of the directory to be removed. This can be either a fully qualified path or a name relative to the current FTP directory. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Ftp:removefile(path)'] = {
 	desc = [[Removes the specified file from the FTP server.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-removefile.html',
@@ -510,7 +509,7 @@ return {
 		{
 			name = [[path]],
 			desc = [[ A string that contains the file path to be removed. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Ftp:upload(file, remote_name)'] = {
 	desc = [[Upload a file to the connected FTP server.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-upload.html',
@@ -522,7 +521,7 @@ return {
 		{
 			name = [[remote_name]],
 			desc = [[ An optional string that contains the destination path and filename on the server.If not provided, the file will be uploaded on the current FTP directory (See Ftp.currentdir) using the same filename. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['net.Ftp'] = {
 	desc = [[The Ftp Object is a client implementaton of the File Transfer Protocol.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp.html',
@@ -538,15 +537,15 @@ return {
 		{
 			name = [[url]],
 			desc = [[ A string representing a valid URL to connect to the HTTP server. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[username]],
 			desc = [[ An optional string representing a username for basic HTTP authentication. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[password]],
 			desc = [[ An optional string representing a password for basic HTTP authentication. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Http:get(uri)'] = {
 	desc = [[Send a GET request to the connected HTTP server for a specific resource, and return the server response.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\http-get.html',
@@ -554,7 +553,7 @@ return {
 		{
 			name = [[uri]],
 			desc = [[ A string representing the resource to get on the server. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Http.headers readonly property'] = {
 	desc = [[The Http.headers property gets a string that contains the headers of the response returned by the HTTP server after the last request or nil if no request have been sent.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\http-headers.html',
@@ -574,15 +573,15 @@ return {
 		{
 			name = [[url]],
 			desc = [[ A string representing a valid URL to the HTTP server. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[username]],
 			desc = [[ An optional string representing a username for basic HTTP authentication. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[password]],
 			desc = [[ An optional string representing a password for basic HTTP authentication. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Http.port readonly property'] = {
 	desc = [[The Http.port property gets the port number used for connection to the HTTP server or nil if connection have been closed.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\http-port.html',
@@ -594,7 +593,7 @@ return {
 		{
 			name = [[uri]],
 			desc = [[ A string representing the resource one the server to POST parameters to. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[parameters]],
 			desc = [[ A table representing the parameters.Each key in the table is a string, representing the parameter name.Table values represent the value for the corresponding parameter. Only string or File object are accepted values. ]],
@@ -626,7 +625,7 @@ return {
 		{
 			name = [[family]],
 			desc = [[ A string representing the IP family address returned at each iteration : "IPv4" or "IPv6". ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['net.error readonly property'] = {
 	desc = [[The net.error property gets the last network error message.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\net-error.html',
@@ -650,13 +649,13 @@ return {
 		{
 			name = [[hostname]],
 			desc = [[ The string to indicate the hostname to resolve, for example "luart.org". ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[family]],
 			desc = [[ An optional string to indicate the IP address family to retrieve from the DNS record : 
         - "ipv4" : an IPv4 address will be returned (default) 
         - "ipv6" : an IPv6 address will be returned ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['net.reverse(ip)'] = {
 	desc = [[Returns the fully qualified domain from an IP address (reverse DNS lookup).]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\net-reverse.html',
@@ -664,7 +663,7 @@ return {
 		{
 			name = [[ip]],
 			desc = [[ The IPv4 or IPv6 address to perform the reverse DNS lookup. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['net.select(socket_array, timeout)'] = {
 	desc = [[Check for network events (readability, writability and errors) on the provided array of Sockets, by updating their corresponding properties Socket.canread, Socket.canwrite, Socket.failed.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\net-select.html',
@@ -672,7 +671,7 @@ return {
 		{
 			name = [[socket_array]],
 			desc = [[ A table containing an array of Sockets to check for network events. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[timeout]],
 			desc = [[ An optional number to indicate the maximum time for select to wait for network events, in microseconds. If that argument is not provided, the function wait until a network event occurs. ]],
@@ -684,7 +683,7 @@ return {
 		{
 			name = [[url]],
 			desc = [[ A string representing a URL to parse, for example "https://www.luart.org/index.html". ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Socket : accept() method'] = {
 	desc = [[Accept a connection. The socket should have been set to listen for incoming connections with a previous Socket:bind() call. When used in blocking mode, the method won't return until a connection is present.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\socket-accept.html',
@@ -724,7 +723,7 @@ return {
 		{
 			name = [[host]],
 			desc = [[ A string representing an IP address (family is autodetected) or a hostname (IP is autoresolved to the given family) ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[port]],
 			desc = [[ The port number the Socket will be bound to. ]],
@@ -734,7 +733,7 @@ return {
 			desc = [[ An optional string to specify the address family when resolving the provided hostname. 
         - "ipv4" : an IPv4 address will be used when resolving the hostname (default) 
         - "ipv6" : an IPv6 address will be used when resolving the hostname ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Socket.failed readonly property'] = {
 	desc = [[]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\socket-failed.html',
@@ -792,11 +791,11 @@ return {
 			desc = [[ An optional string representing the certificate to verify the identity of the other peer. If none is provided, uses the certificate from the server. The string can be : 
         - A server name of a certificate already installed in the current user/Windows certificate store 
         - A path to a .pfx file (PKCS #12), that contains cryptographic information (certificates and private keys). Its contents can be cryptographically protected with passwords. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[password]],
 			desc = [[ An optional string representing the password that must be provided when using a .pfx file . ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['net.Socket'] = {
 	desc = [[The net.Socket Object provides access to the underlying Windows TCP socket implementation.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\socket.html',
@@ -812,7 +811,7 @@ return {
 		{
 			name = [[str]],
 			desc = [[ A string that will be capitalized. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Stringiterable'] = {
 	desc = [[Strings in Luart are iterable through the Luart helper function each, returning the next character in the string with each loop iteration. Each iteration returns a string containing the next character.]],
 	addr = 'https:\\\\www.luart.org\\doc\\string\\string-iterator.html',
@@ -828,7 +827,7 @@ return {
 		{
 			name = [[str]],
 			desc = [[ The string to be used to produce a string with lowercase characters. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['string.search(str, substring, start)'] = {
 	desc = [[Search for the first occurence of a substring, using plain text (no patterns). Faster than standard string.find]],
 	addr = 'https:\\\\www.luart.org\\doc\\string\\string-search.html',
@@ -836,11 +835,11 @@ return {
 		{
 			name = [[str]],
 			desc = [[ The string to search. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[substr]],
 			desc = [[ The sub-string to to search for. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[start]],
 			desc = [[ An optional number indicating where to start the search. Its default value is 1 and can be negative. ]],
@@ -852,7 +851,7 @@ return {
 		{
 			name = [[str1, str2]],
 			desc = [[ The strings to be evaluated for similiarity. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['string.upper(str)'] = {
 	desc = [[Converts all lowercase characters in a string into uppercase characters.]],
 	addr = 'https:\\\\www.luart.org\\doc\\string\\string-upper.html',
@@ -860,7 +859,7 @@ return {
 		{
 			name = [[str]],
 			desc = [[ The string to be used to produce a string with uppercase characters. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Buffer : append (var, encoding) method'] = {
 	desc = [[Append binary data to the Buffer with the specified content.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\Buffer-append.html',
@@ -879,7 +878,7 @@ return {
         - "unicode" : Append the Buffer with an UNICODE (UCS-2 LE) encoded string 
         - "base64" : Append the Buffer with a base64 encoded string 
         - "hex" : Append the Buffer with a hexadecimal encoded string ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Buffer : compress() method'] = {
 	desc = [[Compress the Buffer to another binary Buffer, using the DEFLATE compression algorithm.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\Buffer-compress.html',
@@ -906,7 +905,7 @@ return {
         - "unicode" : Initialize the Buffer with an UNICODE (UCS-2 LE) encoded string 
         - "base64" : Initialize the Buffer with a base64 encoded string 
         - "hex" : Initialize the Buffer with a hexadecimal encoded string ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Buffer:contains(pattern)method'] = {
 	desc = [[Checks if the Buffer contains the whole byte pattern.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\Buffer-contains.html',
@@ -930,7 +929,7 @@ return {
         - "unicode" : uses the UNICODE (UCS-2 LE) encoding 
         - "base64" : uses base64 encoding 
         - "hex" : uses hexadecimal encoding ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Buffer == equality'] = {
 	desc = [[Buffer equality allow to compare buffers. A buffer will be equal to another when their sizes and contents are the same.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\Buffer-eq.html',
@@ -953,7 +952,7 @@ return {
         - "unicode" : Initialize the Buffer with an UNICODE (UCS-2 LE) encoded string 
         - "base64" : Initialize the Buffer with a base64 encoded string 
         - "hex" : Initialize the Buffer with a hexadecimal encoded string ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Buffer indexation'] = {
 	desc = [[Buffer indexing allow to get/set individual byte value.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\Buffer-index.html',
@@ -969,7 +968,7 @@ return {
 		{
 			name = [[format]],
 			desc = [[ A format string to specify the binary layout to serialize the values. See Lua programming reference "string.pack" for available sequence of conversions options. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[values1, values2, ...]],
 			desc = [[ The values to serialize in binary format. ]],
@@ -1001,7 +1000,7 @@ return {
 		{
 			name = [[format]],
 			desc = [[ A format string to specify the binary layout to serialize the values. See Lua programming reference "string.pack" for available sequence of conversions options. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['sys.Buffer'] = {
 	desc = [[Buffer is an Object representation of a sequence of bytes in memory. It permits lower level access to memory with automatic garbage collection of the allocated memory.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\buffer.html',
@@ -1021,7 +1020,7 @@ return {
 		{
 			name = [[command]],
 			desc = [[ A string that contains the command to send to the command interpreter. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['sys.currentdir read/write property'] = {
 	desc = [[The sys.currentdir property get or set a string representing the current working directory.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\currentdir.html',
@@ -1041,7 +1040,7 @@ return {
 		{
 			name = [[moment]],
 			desc = [[ An optional string used to specify the Datetime value, using the current short date format depending on the user current locale. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Datetime.date readonly property'] = {
 	desc = [[The Datetime.date property returns a string representing the "date part" of the moment, in the current local short format.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\Datetime-date.html',
@@ -1064,7 +1063,7 @@ return {
         - Year : "y" or "yy" for short format of the Year, and "yyyy" for the long format. 
         - Month :"M" or "MM" for short format of the Month, and "MMMM" for the long format. 
         - Day : "d" or "dd" for short format of the Day, and "dddd" for the long format. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[timeformat]],
 			desc = [[ An optional string representing the format for the time part. For only formatting the date part, omit that argument. The format tokens accepted are : 
@@ -1073,7 +1072,7 @@ return {
         - Minutes :"m" or "mm" with a leading zero. 
         - Seconds : "s" or "ss" with a leading zero 
         - Time marker : "t or "tt" for AM/PM time marker. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Datetime.hour read/write property'] = {
 	desc = [[The Datetime.hour property returns a number representing the hour of the moment. Valid values are from 0 through 23. Setting the hour property with a value lower or higher will throw an error.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\Datetime-hour.html',
@@ -1095,7 +1094,7 @@ return {
         - "days" 
         - "months" 
         - "years" ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Datetime.milliseconds read/write property'] = {
 	desc = [[The Datetime.milliseconds property returns a number representing the milliseconds of the moment. Valid values are from 0 through 999. Setting the milliseconds property with a value lower or higher will throw an error.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\Datetime-milliseconds.html',
@@ -1194,7 +1193,7 @@ return {
 		{
 			name = [[filter]],
 			desc = [[ A string used to filter folder content. The string can include wildcard characters : an asterisk (*) for one or more characters march or a question mark (?) for single character match. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Directory : make() method'] = {
 	desc = [[Create a folder physically on the disk if it doesn't exists.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\Directory-make.html',
@@ -1210,7 +1209,11 @@ return {
 		{
 			name = [[path]],
 			desc = [[ A string representing the destination path. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
+	['Directory.name readonly property'] = {
+	desc = [[The Directory.name property returns a string representing the folder name (the last part of the fullpath).]],
+	addr = 'https:\\\\www.luart.org\\doc\\sys\\Directory-name.html',
+	params = {} },
 	['Directory.parent readonly property'] = {
 	desc = [[The Directory.parent property returns a Directory representing the parent folder. If the folder is already a root folder, the property returns nil]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\Directory-parent.html',
@@ -1251,14 +1254,14 @@ return {
 	desc = [[The File constructor returns a File value, representing an abstraction of a file (that may or may not exist).]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\File-constructor.html',
 	params = {} },
-	['File : copy (filename) method'] = {
+	['File : copy(filename) method'] = {
 	desc = [[Copies the file physically on the disk to the specified filename.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\File-copy.html',
 	params = {
 		{
 			name = [[filename]],
-			desc = [[ A string representing the destination filename. ]],
-			color = 'lightred'}, nil} },
+			desc = [[ An optional string representing the destination filename, or, use the same filename if omitted. ]],
+			color = 'lightpurple'}, nil} },
 	['File.created read/write property'] = {
 	desc = [[The File.created property set or get a Datetime value indicating when the file has been created. The file must exist physically on the disk.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\File-created.html',
@@ -1267,14 +1270,14 @@ return {
 	desc = [[The File.directory property returns a Directory representing the folder that contains the file.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\File-directory.html',
 	params = {} },
-	['File.encoding read property'] = {
+	['File.encoding readonly property'] = {
 	desc = [[The File.encoding property returns the current file encoding. File should have been opened before to determine it's encoding or the property defaults to "binary" otherwise. File encoding is one of those strings :
         - "binary" encoding : the File has no encoding, using raw bytes for read/write operations.
         - "utf8" encoding : the File is UTF8 encoded, using UTF8 characters for read/write operations.
         - "unicode" encoding : the File is UNICODE (UCS-2 LE) encoded, using UNICODE characters for read/write operations.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\File-encoding.html',
 	params = {} },
-	['File.eof read property'] = {
+	['File.eof readonly property'] = {
 	desc = [[The File.eof property returns a boolean value indicating if the File position has reached the end of file or not. The file must have been opened before using the property.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\File-eof.html',
 	params = {} },
@@ -1285,10 +1288,6 @@ return {
 	['File.extension readonly property'] = {
 	desc = [[The File.extension property returns a string representing the extension of the File, including the "." character.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\File-extension.html',
-	params = {} },
-	['File.filename readonly property'] = {
-	desc = [[The File.filename property returns a string representing the file name and extension of the File.]],
-	addr = 'https:\\\\www.luart.org\\doc\\sys\\File-filename.html',
 	params = {} },
 	['File : flush() method'] = {
 	desc = [[Ensures that all recently written data is saved in the file.]],
@@ -1317,7 +1316,11 @@ return {
 		{
 			name = [[path]],
 			desc = [[ A string representing the destination path. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
+	['File.name readonly property'] = {
+	desc = [[The File.name property returns a string representing the file name and extension of the File.]],
+	addr = 'https:\\\\www.luart.org\\doc\\sys\\File-name.html',
+	params = {} },
 	['File : open (mode, encoding) method'] = {
 	desc = [[Open the file for read/write operations.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\File-open.html',
@@ -1329,14 +1332,14 @@ return {
         - "write": the file will be opened for write operations, erasing any data already present.
         - "append": the file will be opened for write operations, keeping the current data and starting writing at the end.
         - "read/write": the file will be opened for read and write operations. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[encoding]],
 			desc = [[ An optional string that indicates the encoding for read/write operations. By default, encoding is autodetected using Byte Mark Order (BOM) if not provided. 
         - "binary" encoding : the file has no encoding, using raw bytes for read/write operations.
         - "utf8" encoding : the File is UTF8 encoded, using UTF8 characters for read/write operations.
         - "unicode" encoding : the File is UNICODE (UCS-2 LE) encoded, using UNICODE characters for read/write operations. In "write" mode, Byte Order Mark (BOM) is written to the file when "utf8" or "unicode" encoding is provided. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['File.parent readonly property'] = {
 	desc = [[The File.parent property returns a Directory representing the folder that contains the file. If the folder is already a root folder, the property returns nil]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\File-parent.html',
@@ -1382,7 +1385,7 @@ return {
 		{
 			name = [[data]],
 			desc = [[ A variable converted to a string value to be written to the file. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['File : writeln (data) method'] = {
 	desc = [[Writes data to the file, adding a terminal end of line character.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\File-writeln.html',
@@ -1390,7 +1393,7 @@ return {
 		{
 			name = [[data]],
 			desc = [[ A variable converted to a string value to be written to the file. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['sys.File'] = {
 	desc = [[File is an Object representation of a file that may, or may not physically exists.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\file.html',
@@ -1402,7 +1405,7 @@ return {
 		{
 			name = [[mode]],
 			desc = [[ An optional string that indicates the shutdown method to use. If this parameter is not specified, the default value "shutdown" is used. "logoff" : close the current Windows session "shutdown" : shutdown the computer "reboot" : reboot the computer "force" : do not wait for other applications to terminate ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['sys module'] = {
 	desc = [[The sys module provides specific Objects, properties and functions to interact with the operating system. Note that the sys module is preloaded by default (no need to require it).]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\index.html',
@@ -1418,7 +1421,7 @@ return {
 		{
 			name = [[cmd]],
 			desc = [[ A string representing the command to execute. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Pipe : read (delay) method'] = {
 	desc = [[Reads from the Pipe (from the standard output of the executed process).]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\Pipe-read.html',
@@ -1442,11 +1445,83 @@ return {
 		{
 			name = [[data]],
 			desc = [[ A variable converted to a string value to be written to the Pipe. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['sys.Pipe'] = {
 	desc = [[Pipe is an Object representation of inter-process communication when executing a command. It gives easy redirection of the executed process standard output, standard input and standard error.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\pipe.html',
 	params = {} },
+	['sys.registry.delete(rootkey, subkey, value)'] = {
+	desc = [[Delete a value or a subkey from the Windows registry.]],
+	addr = 'https:\\\\www.luart.org\\doc\\sys\\registry-delete.html',
+	params = {
+		{
+			name = [[rootkey]],
+			desc = [[ The root registry key that contains the subkey, must be one of the following string values : 
+        - "HKEY_CLASSES_ROOT" : contains data related to applications, shortcuts, and file extension associations 
+        - "HKEY_CURRENT_CONFIG" : contains the current hardware configuration settings 
+        - "HKEY_CURRENT_USER" : contains data specific to each user with a logon account 
+        - "HKEY_LOCAL_MACHINE" : contains all the computer-specific information about the hardware installed, software settings, and other information 
+        - "HKEY_USERS" : contains information about all the users who log on to the computer ]],
+			color = 'lightpurple'}, 
+		{
+			name = [[subkey]],
+			desc = [[ A string that contains the path to the sub key. ]],
+			color = 'lightpurple'}, nil} },
+	['sys.registry.read(rootkey, subkey, value, expand)'] = {
+	desc = [[Read a value from the given key in the Windows registry.]],
+	addr = 'https:\\\\www.luart.org\\doc\\sys\\registry-read.html',
+	params = {
+		{
+			name = [[rootkey]],
+			desc = [[ The root registry key that contains the subkey, must be one of the following string values : 
+        - "HKEY_CLASSES_ROOT" : contains data related to applications, shortcuts, and file extension associations 
+        - "HKEY_CURRENT_CONFIG" : contains the current hardware configuration settings 
+        - "HKEY_CURRENT_USER" : contains data specific to each user with a logon account 
+        - "HKEY_LOCAL_MACHINE" : contains all the computer-specific information about the hardware installed, software settings, and other information 
+        - "HKEY_USERS" : contains information about all the users who log on to the computer ]],
+			color = 'lightpurple'}, 
+		{
+			name = [[subkey]],
+			desc = [[ A string that contains the path to the wanted sub key. ]],
+			color = 'lightpurple'}, 
+		{
+			name = [[value]],
+			desc = [[ An optional string that contains the name of the value that we want to retrieve from the registry. If omitted or nil or empty, retrieve the unnamed value associated with the key. ]],
+			color = 'lightpurple'}, 
+		{
+			name = [[expand]],
+			desc = [[ An optional boolean value. If set to true and the data read from the registry represents a string, all references to environment variables will be expanded. References to environment variables are between % chars. ]],
+			color = 'lightyellow'}, nil} },
+	['sys.registry.write(rootkey, subkey, value | nil, data, expand)'] = {
+	desc = [[Write a value to the given key in the Windows registry.]],
+	addr = 'https:\\\\www.luart.org\\doc\\sys\\registry-write.html',
+	params = {
+		{
+			name = [[rootkey]],
+			desc = [[ The root registry key that contains the subkey, must be one of the following string values : 
+        - "HKEY_CLASSES_ROOT" : contains data related to applications, shortcuts, and file extension associations 
+        - "HKEY_CURRENT_CONFIG" : contains the current hardware configuration settings 
+        - "HKEY_CURRENT_USER" : contains data specific to each user with a logon account 
+        - "HKEY_LOCAL_MACHINE" : contains all the computer-specific information about the hardware installed, software settings, and other information 
+        - "HKEY_USERS" : contains information about all the users who log on to the computer ]],
+			color = 'lightpurple'}, 
+		{
+			name = [[subkey]],
+			desc = [[ A string that contains the path to the wanted sub key. ]],
+			color = 'lightpurple'}, 
+		{
+			name = [[A string that contains the name of the value that we want to write in the registry. If nil, writes the unnamed value associated with the key. data]],
+			desc = [[ The data to be written to the registry. Can be any of the following values : 
+        - string : writes the string content in the registry. 
+        - number : writes the number as a double-word or quad-word in the registry. 
+        - Buffer : writes all the buffer as binary data in the registry 
+        - table : writes the strings in the table as a multi-string value in the registry. 
+        - nil : writes a nil value in the registry. ]],
+			color = 'brightwhite'}, 
+		{
+			name = [[expand]],
+			desc = [[ An optional boolean value. If set to true and the data to write to the registry is a string, all references to environment variables will be expanded once the value is read. References to environment variables are between % chars. ]],
+			color = 'lightyellow'}, nil} },
 	['sys.sleep(delay)'] = {
 	desc = [[Suspend the program execution until the delay elapse.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\sleep.html',
@@ -1462,7 +1537,7 @@ return {
 		{
 			name = [[prefix]],
 			desc = [[ An optional string that contains the first 3 letters of the temporary filename. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Button:align(alignment) method'] = {
 	desc = [[Change Button position and size to be aligned relative to its parent.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Button-align.html',
@@ -1475,7 +1550,7 @@ return {
         - "top" : the Button will be aligned along the the top border of the parent, preserving its height. 
         - "right" : the Button will be aligned along the right border of the parent, preserving its width. 
         - "left" : the Button will be aligned along the left border of the parent, preserving its width. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Button:autosize() method'] = {
 	desc = [[Resize the Button automatically to accommodate its content.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Button-autosize.html',
@@ -1491,7 +1566,7 @@ return {
 		{
 			name = [[caption]],
 			desc = [[ A string representing the Button's text. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[x]],
 			desc = [[ An optional number that indicates the Button horizontal position, in pixels. Zero means the left border of the parent. ]],
@@ -1532,7 +1607,7 @@ return {
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Button-enabled.html',
 	params = {} },
 	['Button.font read/write property'] = {
-	desc = [[Get or set the Button font, a string value that represent the font name. Note that only the font family is changed. The font style and font size are not affected (see the Button.fontstyle and the Button.fontsize properties). By default, a Button uses the same font as its parent widget Any change in the Button.font, Button.fontstyle and Button.fontsize properties results in an automatic resizing of the Button so that the content is displayed correctly]],
+	desc = [[Get the Button font, a string value that represent the font name. To set the Button.font property, you can assign a string that represent either a font name of an installed system font, or a font file (*.ttf, *.fon...). A File can also be provided, representing a font file. Note that only the font family is changed. The font style and font size are not affected (see the Button.fontstyle and the Button.fontsize properties). By default, a Button uses the same font as its parent widget Any change in the Button.font, Button.fontstyle and Button.fontsize properties results in an automatic resizing of the Button so that the content is displayed correctly]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Button-font.html',
 	params = {} },
 	['Button.fontsize read/write property'] = {
@@ -1557,6 +1632,22 @@ return {
 	desc = [[Hide and deactivate the Button (events can no longer be fired).]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Button-hide.html',
 	params = {} },
+	['Button:loadicon(path, index) method'] = {
+	desc = [[Loads a Button icon, displayed to the left of the Button caption.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Button-loadicon.html',
+	params = {
+		{
+			name = [[path]],
+			desc = [[ Represent any of the following possible icon locations : 
+        - A string which represents the path to an ".ico" icon file, or gets the icon associated with the provided file/directory. 
+        - A Widget object, whose icon will be used by the Button. 
+        - A Directory or File object, representing an ".ico" file, or gets the icon associated with the provided file/directory. 
+        - A Buffer object, whose binary content will represent the icon. ]],
+			color = 'brightwhite'}, 
+		{
+			name = [[index]],
+			desc = [[ The icon index, a optional number starting from 1, that represent the icon to select. ]],
+			color = 'lightyellow'}, nil} },
 	['Button:onClick() event'] = {
 	desc = [[This event is fired when the user has clicked on the Button.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Button-onclick.html',
@@ -1641,7 +1732,7 @@ return {
         - "top" : the Calendar will be aligned along the the top border of the parent, preserving its height. 
         - "right" : the Calendar will be aligned along the right border of the parent, preserving its width. 
         - "left" : the Calendar will be aligned along the left border of the parent, preserving its width. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Calendar.constructor(parent, x , y , width , height) constructor'] = {
 	desc = [[The Calendar constructor returns a Calendar value representing a month calendar to choose a date.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Calendar-constructor.html',
@@ -1773,7 +1864,7 @@ return {
         - "top" : the Checkbox will be aligned along the the top border of the parent, preserving its height. 
         - "right" : the Checkbox will be aligned along the right border of the parent, preserving its width. 
         - "top" : the Checkbox will be aligned along the left border of the parent, preserving its width. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Checkbox:autosize() method'] = {
 	desc = [[Resize the Checkbox automatically to accommodate its content.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Checkbox-autosize.html',
@@ -1793,7 +1884,7 @@ return {
 		{
 			name = [[caption]],
 			desc = [[ A string representing the Checkbox's text. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[x]],
 			desc = [[ An optional number that indicates the Checkbox horizontal position, in pixels. Zero means the left border of the parent. ]],
@@ -1834,7 +1925,7 @@ return {
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Checkbox-enabled.html',
 	params = {} },
 	['Checkbox.font read/write property'] = {
-	desc = [[Get or set the Checkbox font, a string value that represent the font name. Note that only the font family is changed. The font style and font size are not affected (see the Checkbox.fontstyle and the Checkbox.fontsize properties). By default, a Checkbox uses the same font as its parent widget Any change in the Checkbox.font, Checkbox.fontstyle and Checkbox.fontsize properties results in an automatic resizing of the Checkbox so that the content is displayed correctly]],
+	desc = [[Get the Checkbox font, a string value that represent the font name. To set the Checkbox.font property, you can assign a string that represent either a font name of an installed system font, or a font file (*.ttf, *.fon...). A File can also be provided, representing a font file. Note that only the font family is changed. The font style and font size are not affected (see the Checkbox.fontstyle and the Checkbox.fontsize properties). By default, a Checkbox uses the same font as its parent widget Any change in the Checkbox.font, Checkbox.fontstyle and Checkbox.fontsize properties results in an automatic resizing of the Checkbox so that the content is displayed correctly]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Checkbox-font.html',
 	params = {} },
 	['Checkbox.fontsize read/write property'] = {
@@ -1955,7 +2046,7 @@ return {
         - "top" : the Combobox will be aligned along the the top border of the parent, preserving its height. 
         - "right" : the Combobox will be aligned along the right border of the parent, preserving its width. 
         - "left" : the Combobox will be aligned along the left border of the parent, preserving its width. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Combobox:clear() method'] = {
 	desc = [[Remove all items from the Combobox.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Combobox-clear.html',
@@ -2016,7 +2107,7 @@ return {
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Combobox-enabled.html',
 	params = {} },
 	['Combobox.font read/write property'] = {
-	desc = [[Get or set the Combobox font, a string value that represent the font name. Note that only the font family is changed. The font style and font size are not affected (see the Combobox.fontstyle and the Combobox.fontsize properties). 
+	desc = [[Get the Combobox font, a string value that represent the font name. To set the Combobox.font property, you can assign a string that represent either a font name of an installed system font, or a font file (*.ttf, *.fon...). A File can also be provided, representing a font file. Note that only the font family is changed. The font style and font size are not affected (see the Combobox.fontstyle and the Combobox.fontsize properties). 
         - By default, an Combobox uses the same font as its parent widget 
         - Any change in the Combobox.font, Combobox.fontstyle and Combobox.fontsize properties results in an automatic resizing of the Combobox so that the content is displayed correctly]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Combobox-font.html',
@@ -2106,7 +2197,7 @@ return {
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Combobox-y.html',
 	params = {} },
 	['ui.Combobox'] = {
-	desc = [[Combobox is an Object representation of a single line text field.]],
+	desc = [[Combobox is an Object representation of an edit box combiend with a scrollable list.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\combobox.html',
 	params = {} },
 	['ui.confirm (msg , title)'] = {
@@ -2116,11 +2207,11 @@ return {
 		{
 			name = [[msg]],
 			desc = [[ A string that indicates the message to display to the user. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[title]],
 			desc = [[ An optional string that indicates the title of the message dialog box (defaulting to "Confirmation") ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['ui.dirdialog (prompt)'] = {
 	desc = [[Displays a dialog box for the user to choose an existing directory.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\dirdialog.html',
@@ -2128,7 +2219,7 @@ return {
 		{
 			name = [[prompt]],
 			desc = [[ An optional string that gives the user indication for the selection. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Edit:align(alignment) method'] = {
 	desc = [[Change Edit position and size to be aligned relative to its parent.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Edit-align.html',
@@ -2141,7 +2232,7 @@ return {
         - "top" : the Edit will be aligned along the the top border of the parent, preserving its height. 
         - "right" : the Edit will be aligned along the right border of the parent, preserving its width. 
         - "left" : the Edit will be aligned along the left border of the parent, preserving its width. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Edit:append(text)method'] = {
 	desc = [[Append text to Edit content, just after the last character position.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Edit-append.html',
@@ -2149,7 +2240,7 @@ return {
 		{
 			name = [[text]],
 			desc = [[ A string, representing the text to append to the Edit content. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Edit.bgcolor read/write property'] = {
 	desc = [[Get or set the global Edit background color. The background color is represented by a number, an RGB value (one byte per primary color). A RGB color can be represented as an hexadecimal number : 0xRRGGBB , RR meaning a 8bit hexadecimal red value, and so on.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Edit-bgcolor.html',
@@ -2183,7 +2274,7 @@ return {
 		{
 			name = [[text]],
 			desc = [[ A string representing the Edit's text content. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[x]],
 			desc = [[ An optional number that indicates the Edit horizontal position, in pixels. Zero means the left border of the parent. ]],
@@ -2213,7 +2304,7 @@ return {
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Edit-enabled.html',
 	params = {} },
 	['Edit.font read/write property'] = {
-	desc = [[Get or set the Edit font, a string value that represent the font name. Note that only the font family is changed. The font style and font size are not affected (see the Edit.fontstyle and the Edit.fontsize properties). By default, an Edit uses the same font as its parent widget]],
+	desc = [[Get the Edit font, a string value that represent the font name. To set the Edit.font property, you can assign a string that represent either a font name of an installed system font, or a font file (*.ttf, *.fon...). A File can also be provided, representing a font file. Note that only the font family is changed. The font style and font size are not affected (see the Edit.fontstyle and the Edit.fontsize properties). By default, an Edit uses the same font as its parent widget]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Edit-font.html',
 	params = {} },
 	['Edit.fontsize read/write property'] = {
@@ -2256,7 +2347,7 @@ return {
 		{
 			name = [[File | filename]],
 			desc = [[ A File object or a filename string, representing the file whose content will fill the Edit. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[isrichtext]],
 			desc = [[ An optional boolean value indicating wether the file content is in RichText format, or not. ]],
@@ -2323,7 +2414,7 @@ return {
 		{
 			name = [[File | filename]],
 			desc = [[ A File object or a filename string, representing the file whose content will fill the Edit. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[isrichtext]],
 			desc = [[ An optional boolean value indicating wether the file content is in RichText format, or not. ]],
@@ -2331,7 +2422,7 @@ return {
 		{
 			name = [[encoding]],
 			desc = [[ An optional string indicating the desired file encoding (See File:open() for possible encoding values). If omitted, uses default raw binary encoding. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Edit:searchdown(findtext, iswholeword , matchcase)method'] = {
 	desc = [[Search text withins the Edit content, forward from the current caret position.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Edit-searchdown.html',
@@ -2339,7 +2430,7 @@ return {
 		{
 			name = [[findtext]],
 			desc = [[ A string value, representing the text to search for. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[iswholeword]],
 			desc = [[ A boolean value, indicating to search only for whole words that match the search text. ]],
@@ -2355,7 +2446,7 @@ return {
 		{
 			name = [[findtext]],
 			desc = [[ A string value, representing the text to search for. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[iswholeword]],
 			desc = [[ A boolean value, indicating to search only for whole words that match the search text. ]],
@@ -2364,7 +2455,7 @@ return {
 			name = [[matchcase]],
 			desc = [[ A boolean value, indicating that the search operation is case-sensitive. ]],
 			color = 'lightyellow'}, nil} },
-	['Edit.selection read property'] = {
+	['Edit.selection readonly property'] = {
 	desc = [[Returns a proxy table to get/set the current Edit selection properties. You can get or set the following fields : 
         - selection.from: the starting character position of the current selection (1 means the caret is just before the first character) 
         - selection.to: the ending character position of the current selection (0 means the caret is after the last character) 
@@ -2433,7 +2524,7 @@ return {
         - "top" : the Entry will be aligned along the the top border of the parent, preserving its height. 
         - "right" : the Entry will be aligned along the right border of the parent, preserving its width. 
         - "left" : the Entry will be aligned along the left border of the parent, preserving its width. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Entry:autosize() method'] = {
 	desc = [[Resize the Entry automatically to accommodate its contents.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Entry-autosize.html',
@@ -2453,7 +2544,7 @@ return {
 		{
 			name = [[caption]],
 			desc = [[ A string representing the Entry's text. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[x]],
 			desc = [[ An optional number that indicates the Entry horizontal position, in pixels. Zero means the left border of the parent. ]],
@@ -2502,7 +2593,7 @@ return {
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Entry-enabled.html',
 	params = {} },
 	['Entry.font read/write property'] = {
-	desc = [[Get or set the Entry font, a string value that represent the font name. Note that only the font family is changed. The font style and font size are not affected (see the Entry.fontstyle and the Entry.fontsize properties). 
+	desc = [[Get the Entry font, a string value that represent the font name. To set the Entry.font property, you can assign a string that represent either a font name of an installed system font, or a font file (*.ttf, *.fon...). A File can also be provided, representing a font file. Note that only the font family is changed. The font style and font size are not affected (see the Entry.fontstyle and the Entry.fontsize properties). 
         - By default, an Entry uses the same font as its parent widget 
         - Any change in the Entry.font, Entry.fontstyle and Entry.fontsize properties results in an automatic resizing of the Entry so that the content is displayed correctly]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Entry-font.html',
@@ -2597,7 +2688,7 @@ return {
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Entry-textalign.html',
 	params = {} },
 	['Entry.textlimit read/write property'] = {
-	desc = [[Get or set a number value, indicating the maximum length of the text entered. Setting the property with a value of 0, permits a maximum of 2�rong> characters.]],
+	desc = [[Get or set a number value, indicating the maximum length of the text entered. Setting the property with a value of 0, permits a maximum of 2�ng> characters.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Entry-textlimit.html',
 	params = {} },
 	['Entry.tooltip read/write property'] = {
@@ -2635,11 +2726,11 @@ return {
 		{
 			name = [[msg]],
 			desc = [[ A string that indicates the error message to display to the user. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[title]],
 			desc = [[ An optional string that indicates the title of the message dialog box (defaulting to "Error") ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['ui.fontdialog(widget, color)'] = {
 	desc = [[Displays a dialog box for the user to choose a Windows system font.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\fontdialog.html',
@@ -2664,7 +2755,7 @@ return {
         - "top" : the Groupbox will be aligned along the the top border of the parent, preserving its height. 
         - "right" : the Groupbox will be aligned along the right border of the parent, preserving its width. 
         - "left" : the Groupbox will be aligned along the left border of the parent, preserving its width. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Groupbox.constructor(parent, caption, x , y , width , height) constructor'] = {
 	desc = [[The Groupbox constructor returns a Groupbox value representing a group of related controls. Whenever another widget is placed within a Groupbox, that groupbox becomes its parent.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Groupbox-constructor.html',
@@ -2676,7 +2767,7 @@ return {
 		{
 			name = [[caption]],
 			desc = [[ A string representing the Groupbox's text. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[x]],
 			desc = [[ An optional number that indicates the Groupbox horizontal position, in pixels. Zero means the left border of the parent. ]],
@@ -2698,7 +2789,7 @@ return {
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Groupbox-enabled.html',
 	params = {} },
 	['Groupbox.font read/write property'] = {
-	desc = [[Get or set the Groupbox font, a string value that represent the font name. Note that only the font family is changed. The font style and font size are not affected (see the Groupbox.fontstyle and the Groupbox.fontsize properties). Any change in the Groupbox.font, Groupbox.fontstyle and Groupbox.fontsize properties applies to all contained widgets]],
+	desc = [[Get the Groupbox font, a string value that represent the font name. To set the Groupbox.font property, you can assign a string that represent either a font name of an installed system font, or a font file (*.ttf, *.fon...). A File can also be provided, representing a font file. Note that only the font family is changed. The font style and font size are not affected (see the Groupbox.fontstyle and the Groupbox.fontsize properties). Any change in the Groupbox.font, Groupbox.fontstyle and Groupbox.fontsize properties applies to all contained widgets]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Groupbox-font.html',
 	params = {} },
 	['Groupbox.fontsize read/write property'] = {
@@ -2778,11 +2869,11 @@ return {
 		{
 			name = [[msg]],
 			desc = [[ A string that indicates the message to display to the user. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[title]],
 			desc = [[ An optional string that indicates the title of the message dialog box (defaulting to "Information") ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['TabItem.enabled read/write properties'] = {
 	desc = [[Get or set the TabItem content ability to respond to mouse, and any other events. When set to false, disable the TabItem (the user will not be able to interact with its content), and TabItem childs controls events won't be fired anymore.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Item-enabled.html',
@@ -2791,14 +2882,22 @@ return {
 	desc = [[Get or set the item position, a number starting from 1 and increase until the total count of items.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Item-index.html',
 	params = {} },
-	['ListItem:loadicon, TabItem:loadicon, ComboItem:loadicon(icon) method'] = {
+	['ListItem:loadicon, TabItem:loadicon, ComboItem:loadicon(path, index) method'] = {
 	desc = [[Loads an item icon, displayed to the left of the item's text.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Item-loadicon.html',
 	params = {
 		{
-			name = [[icon]],
-			desc = [[ A string which represents the path to an ".ico" icon file, or a File object , or a Widget object, whose icon will be used by the window. ]],
-			color = 'brightwhite'}, nil} },
+			name = [[path]],
+			desc = [[ Represent any of the following possible icon locations : 
+        - A string which represents the path to an ".ico" icon file, or gets the icon associated with the provided file/directory. 
+        - A Widget object, whose icon will be used by the item. 
+        - A Directory or File object, representing an ".ico" file, or gets the icon associated with the provided file/directory. 
+        - A Buffer object, whose binary content will represent the icon. ]],
+			color = 'brightwhite'}, 
+		{
+			name = [[index]],
+			desc = [[ The icon index, a optional number starting from 1, that represent the icon to select. ]],
+			color = 'lightyellow'}, nil} },
 	['ListItem.owner, TabItem.owner, ComboItem.owner readonly properties'] = {
 	desc = [[Get the Object that owns the item. Items are ephemeral objects that are instantiated by their owner objects, with the "items" property. It is not recommended that you store them in a table or use them globally since they may refer to items that have been deleted.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Item-owner.html',
@@ -2827,7 +2926,7 @@ return {
         - "top" : the Label will be aligned along the the top border of the parent, preserving its height. 
         - "right" : the Label will be aligned along the right border of the parent, preserving its width. 
         - "left" : the Label will be aligned along the left border of the parent, preserving its width. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Label:autosize() method'] = {
 	desc = [[Resize the Label automatically to accommodate its contents.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Label-autosize.html',
@@ -2843,7 +2942,7 @@ return {
 		{
 			name = [[caption]],
 			desc = [[ A string representing the Label's text. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[x]],
 			desc = [[ An optional number that indicates the Label horizontal position, in pixels. Zero means the left border of the parent. ]],
@@ -2884,7 +2983,7 @@ return {
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Label-enabled.html',
 	params = {} },
 	['Label.font read/write property'] = {
-	desc = [[Get or set the Label font, a string value that represent the font name. Note that only the font family is changed. The font style and font size are not affected (see the Label.fontstyle and the Label.fontsize properties). 
+	desc = [[Get the Label font, a string value that represent the font name. To set the Label.font property, you can assign a string that represent either a font name of an installed system font, or a font file (*.ttf, *.fon...). A File can also be provided, representing a font file. Note that only the font family is changed. The font style and font size are not affected (see the Label.fontstyle and the Label.fontsize properties). 
         - By default, a Label uses the same font as its parent widget 
         - Any change in the Label.font, Label.fontstyle and Label.fontsize properties results in an automatic resizing of the Label so that the content is displayed correctly]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Label-font.html',
@@ -3006,7 +3105,7 @@ return {
         - "top" : the List will be aligned along the the top border of the parent, preserving its height. 
         - "right" : the List will be aligned along the right border of the parent, preserving its width. 
         - "left" : the List will be aligned along the left border of the parent, preserving its width. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['List:clear() method'] = {
 	desc = [[Remove all items from the List.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\List-clear.html',
@@ -3067,7 +3166,7 @@ return {
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\List-enabled.html',
 	params = {} },
 	['List.font read/write property'] = {
-	desc = [[Get or set the List font, a string value that represent the font name. Note that only the font family is changed. The font style and font size are not affected (see the List.fontstyle and the List.fontsize properties). By default, an List uses the same font as its parent widget]],
+	desc = [[Get the List font, a string value that represent the font name. To set the List.font property, you can assign a string that represent either a font name of an installed system font, or a font file (*.ttf, *.fon...). A File can also be provided, representing a font file. Note that only the font family is changed. The font style and font size are not affected (see the List.fontstyle and the List.fontsize properties). By default, an List uses the same font as its parent widget]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\List-font.html',
 	params = {} },
 	['List.fontsize read/write property'] = {
@@ -3108,6 +3207,10 @@ return {
 	desc = [[This event is fired when the List object has just been created (just after the List:constructor() call). This event is particularly interesting when you want to inherit from a widget object, or to initialize its properties.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\List-oncreate.html',
 	params = {} },
+	['List:onDoubleClick(ListItem) event'] = {
+	desc = [[Event fired when the user has double-clicked on an item in the List.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\List-ondoubleclick.html',
+	params = {} },
 	['List:onHide() event'] = {
 	desc = [[This event is fired when the List is hidden (with a call to List:hide() or setting the List.visible property to false).]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\List-onhide.html',
@@ -3128,7 +3231,7 @@ return {
 	desc = [[This event is fired when the mouse cursor leaves the List.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\List-onleave.html',
 	params = {} },
-	['List:onSelect(ComboItem) event'] = {
+	['List:onSelect(ListItem) event'] = {
 	desc = [[Event fired when the user has choosen an item in the List.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\List-onselect.html',
 	params = {} },
@@ -3162,7 +3265,7 @@ return {
         - "none" : No sorting. 
         - "ascend" : the List will be sorted in alphabetic order 
         - "descend" : the List will be sorted in inverse alphabetic order. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['List.style read/write property'] = {
 	desc = [[Get or set the current style, a string value, that specifies the List appearance : 
         - "text" : List will display only text items (default). 
@@ -3212,7 +3315,7 @@ return {
 		{
 			name = [[caption]],
 			desc = [[ An optional string representing the item caption. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[submenu]],
 			desc = [[ An optional item submenu Menu object. ]],
@@ -3253,10 +3356,22 @@ return {
 	desc = [[Get or set the Menu item position, a number starting from 1 and increase until the total count of MenuItems.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Menuitem-index.html',
 	params = {} },
-	['MenuItem:loadicon(icon) method'] = {
+	['MenuItem:loadicon(path, index) method'] = {
 	desc = [[Loads an menuitem icon, displayed to the left of the Menu item's text.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Menuitem-loadicon.html',
-	params = {} },
+	params = {
+		{
+			name = [[path]],
+			desc = [[ Represent any of the following possible icon locations : 
+        - A string which represents the path to an ".ico" icon file, or gets the icon associated with the provided file/directory. 
+        - A Widget object, whose icon will be used by the MenuItem. 
+        - A Directory or File object, representing an ".ico" file, or gets the icon associated with the provided file/directory. 
+        - A Buffer object, whose binary content will represent the icon. ]],
+			color = 'brightwhite'}, 
+		{
+			name = [[index]],
+			desc = [[ The icon index, a optional number starting from 1, that represent the icon to select. ]],
+			color = 'lightyellow'}, nil} },
 	['MenuItem:onClick() event'] = {
 	desc = [[This event is fired when the user has clicked on a Menu item. If defined, this event will be fired instead of the Menu:onClick() event.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Menuitem-onclick.html',
@@ -3288,11 +3403,11 @@ return {
 		{
 			name = [[msg]],
 			desc = [[ A string that indicates the message to display to the user. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[title]],
 			desc = [[ An optional string that indicates the title of the message dialog box (defaulting to "Message") ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['ui.opendialog (title , allow_mutiple_selection , filters)'] = {
 	desc = [[Displays a dialog box for the user to choose a file or set of files to be opened. The file(s) must exist physically on the drive.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\opendialog.html',
@@ -3300,7 +3415,7 @@ return {
 		{
 			name = [[title]],
 			desc = [[ An optional string that indicates the title of the dialog box (use the default system title if not specified). ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[allow_multiple_selection]],
 			desc = [[ An optional boolean value that indicates if the dialog allow multiple files selection or not. ]],
@@ -3310,7 +3425,7 @@ return {
 			desc = [[ An optional string that indicates filters. A filter is used to display only files with a specified pattern. If omitted, the dialog shows all files. A filter is composed of a and a field, each separated by the character "|". For example, the string "All files (*.*)|*.*|Text files (*.txt)|*.txt" defines 2 filters : 
         - A filter named "All files (*.*)" that correspond to the search pattern "*.*" 
         - A filter named "Text files (*.txt)" that correspond to the search pattern "*.txt" ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Radiobutton:align(alignment) method'] = {
 	desc = [[Change Radiobutton position and size to be aligned relative to its parent.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Radiobutton-align.html',
@@ -3323,7 +3438,7 @@ return {
         - "top" : the Radiobutton will be aligned along the the top border of the parent, preserving its height. 
         - "right" : the Radiobutton will be aligned along the right border of the parent, preserving its width. 
         - "top" : the Radiobutton will be aligned along the left border of the parent, preserving its width. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Radiobutton:autosize() method'] = {
 	desc = [[Resize the Radiobutton automatically to accommodate its content.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Radiobutton-autosize.html',
@@ -3347,7 +3462,7 @@ return {
 		{
 			name = [[caption]],
 			desc = [[ A string representing the Radiobutton's text. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[x]],
 			desc = [[ An optional number that indicates the Radiobutton horizontal position, in pixels. Zero means the left border of the parent. ]],
@@ -3388,7 +3503,7 @@ return {
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Radiobutton-enabled.html',
 	params = {} },
 	['Radiobutton.font read/write property'] = {
-	desc = [[Get or set the Radiobutton font, a string value that represent the font name. Note that only the font family is changed. The font style and font size are not affected (see the Radiobutton.fontstyle and the Radiobutton.fontsize properties). By default, a Radiobutton uses the same font as its parent widget Any change in the Radiobutton.font, Radiobutton.fontstyle and Radiobutton.fontsize properties results in an automatic resizing of the Radiobutton so that the content is displayed correctly]],
+	desc = [[Get the Radiobutton font, a string value that represent the font name. To set the Radiobutton.font property, you can assign a string that represent either a font name of an installed system font, or a font file (*.ttf, *.fon...). A File can also be provided, representing a font file. Note that only the font family is changed. The font style and font size are not affected (see the Radiobutton.fontstyle and the Radiobutton.fontsize properties). By default, a Radiobutton uses the same font as its parent widget Any change in the Radiobutton.font, Radiobutton.fontstyle and Radiobutton.fontsize properties results in an automatic resizing of the Radiobutton so that the content is displayed correctly]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Radiobutton-font.html',
 	params = {} },
 	['Radiobutton.fontsize read/write property'] = {
@@ -3485,6 +3600,14 @@ return {
 	desc = [[Radiobutton is an Object representation of an exclusive option that can be checked or unchecked.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\radiobutton.html',
 	params = {} },
+	['ui.remove(widget)'] = {
+	desc = [[Removes a widget. Once a widget is removed, it should not be accessed anymore and will be garbagecollected at the next garbage collection step.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\remove.html',
+	params = {
+		{
+			name = [[widget]],
+			desc = [[ The widget to be removed. ]],
+			color = 'brightwhite'}, nil} },
 	['ui.savedialog (title , allow_mutiple_selection , filters)'] = {
 	desc = [[Displays a dialog box for the user to specify the drive, directory, and name of a file to save.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\savedialog.html',
@@ -3492,7 +3615,7 @@ return {
 		{
 			name = [[title]],
 			desc = [[ An optional string that indicates the title of the dialog box (use the default system title if not specified). ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[allow_multiple_selection]],
 			desc = [[ An optional boolean value that indicates if the dialog allow multiple files selection or not. ]],
@@ -3502,7 +3625,7 @@ return {
 			desc = [[ An optional string that indicates filters. A filter is used to display only files with a specified pattern. If omitted, the dialog shows all files. A filter is composed of a and a field, each separated by the character "|". For example, the string "All files (*.*)|*.*|Text files (*.txt)|*.txt" defines 2 filters : 
         - A filter named "All files (*.*)" that correspond to the search pattern "*.*" 
         - A filter named "Text files (*.txt)" that correspond to the search pattern "*.txt" ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Tab:add(itemtext) method'] = {
 	desc = [[Add a new item to the Tab. itemtext The string to be added to the Tab. These items can later be accessed using the Tab.items property, as TabItems objects.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tab-add.html',
@@ -3519,7 +3642,7 @@ return {
         - "top" : the Tab will be aligned along the the top border of the parent, preserving its height. 
         - "right" : the Tab will be aligned along the right border of the parent, preserving its width. 
         - "left" : the Tab will be aligned along the left border of the parent, preserving its width. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Tab:clear() method'] = {
 	desc = [[Remove all items from the Tab.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tab-clear.html',
@@ -3580,7 +3703,7 @@ return {
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tab-enabled.html',
 	params = {} },
 	['Tab.font read/write property'] = {
-	desc = [[Get or set the Tab font, a string value that represent the font name. Note that only the font family is changed. The font style and font size are not affected (see the Tab.fontstyle and the Tab.fontsize properties). By default, an Tab uses the same font as its parent widget]],
+	desc = [[Get the Tab font, a string value that represent the font name. To set the Tab.font property, you can assign a string that represent either a font name of an installed system font, or a font file (*.ttf, *.fon...). A File can also be provided, representing a font file. Note that only the font family is changed. The font style and font size are not affected (see the Tab.fontstyle and the Tab.fontsize properties). By default, an Tab uses the same font as its parent widget]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tab-font.html',
 	params = {} },
 	['Tab.fontsize read/write property'] = {
@@ -3637,7 +3760,7 @@ return {
 	desc = [[This event is fired when the mouse cursor leaves the Tab.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tab-onleave.html',
 	params = {} },
-	['Tab:onSelect(ComboItem) event'] = {
+	['Tab:onSelect(TabItem) event'] = {
 	desc = [[Event fired when the user has choosen an item in the Tab.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tab-onselect.html',
 	params = {} },
@@ -3692,11 +3815,11 @@ return {
 		{
 			name = [[msg]],
 			desc = [[ A string that indicates the message to display to the user. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[title]],
 			desc = [[ An optional string that indicates the title of the message dialog box (defaulting to "Warning") ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Window:align(alignment) method'] = {
 	desc = [[Change Window position and size to be aligned relative to the Windows Desktop.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Window-align.html',
@@ -3709,7 +3832,7 @@ return {
         - "top" : the Window will be aligned along the the top border of the Desktop, preserving its height. 
         - "right" : the Window will be aligned along the right border of the Desktop, preserving its width. 
         - "left" : the Window will be aligned along the left border of the Desktop, preserving its width. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Window.constructor(title, style, width , height) constructor'] = {
 	desc = [[The Window constructor returns a Window value representing a user interface dialog. Please note that a created Window will not be shown until its method Window:show() has been called.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Window-constructor.html',
@@ -3717,14 +3840,14 @@ return {
 		{
 			name = [[title]],
 			desc = [[ A string representing the Window's title. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[style]],
 			desc = [[ A string that describe the Window style : 
         - "dialog" : the default, a resizeable dialog. The user can maximize/minimize the window. 
         - "fixed" : a fixed size dialog. 
         - "float" : a tiny float window. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[width]],
 			desc = [[ An optional number that indicates the Window width, in pixels, defaulting to 640. ]],
@@ -3765,7 +3888,7 @@ return {
 			desc = [[ A child control on the window to be focused ]],
 			color = 'brightwhite'}, nil} },
 	['Window.font read/write property'] = {
-	desc = [[Get or set the window font, a string value that represent the font name. Note that only the font family is changed. The font style and font size are not affected (see the Window.fontstyle and the Window.fontsize properties). By changing the font of the window, you also change the font of any newly created child controls. When setting the window font, if the specified font is not installed on the system, the font is not changed.]],
+	desc = [[Get the window font, a string value that represent the font name. To set the Window.font property, you can assign a string that represent either a font name of an installed system font, or a font file (*.ttf, *.fon...). A File can also be provided, representing a font file. Note that only the font family is changed. The font style and font size are not affected (see the Window.fontstyle and the Window.fontsize properties). By changing the font of the window, you also change the font of any newly created child controls. When setting the window font, if the specified font is not installed on the system, the font is not changed.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Window-font.html',
 	params = {} },
 	['Window.fontsize read/write property'] = {
@@ -3790,18 +3913,22 @@ return {
 	desc = [[Hide and deactivate the Window (events can no longer be fired).]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Window-hide.html',
 	params = {} },
-	['Window:loadicon (icon) method'] = {
+	['Window:loadicon(path, index) method'] = {
 	desc = [[Loads the window icon, displayed at the top left corner and on the taskbar.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Window-loadicon.html',
 	params = {
 		{
-			name = [[icon]],
+			name = [[path]],
 			desc = [[ Represent any of the following possible icon locations : 
-        - A string which represents the path to an ".ico" icon file 
-        - A Widget object, whose icon will be used by the window. 
-        - A File object, representing an ".ico" file. 
-        - A Buffer object, whose binary content will represent the icon. If the window icon is not set with the win:loadicon() method, the system provides a default icon. ]],
-			color = 'brightwhite'}, nil} },
+        - A string which represents the path to an ".ico" icon file, or gets the icon associated with the provided file/directory. 
+        - A Widget object, whose icon will be used by the Window. 
+        - A Directory or File object, representing an ".ico" file, or gets the icon associated with the provided file/directory. 
+        - A Buffer object, whose binary content will represent the icon. ]],
+			color = 'brightwhite'}, 
+		{
+			name = [[index]],
+			desc = [[ The icon index, a optional number starting from 1, that represent the icon to select. ]],
+			color = 'lightyellow'}, nil} },
 	['Window:maximize() method'] = {
 	desc = [[Maximize and activate the Window to the entire desktop. Fixed Windows cannot be resized, minimized or maximized by the user. However it can still be done programmatically]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Window-maximize.html',
@@ -3877,7 +4004,7 @@ return {
 		{
 			name = [[key]],
 			desc = [[ A one character string, which represents the key that will throw the shortcut's provided function. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[func]],
 			desc = [[ A function that will be executed each time the user press the key. ]],
@@ -3913,7 +4040,7 @@ return {
 		{
 			name = [[msg]],
 			desc = [[ One or more strings, which represents messages to be displayed in the status bar. Each message is displayed in a part of the status bar. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Window.title read/write property'] = {
 	desc = [[Get or set the Window title as a string.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Window-title.html',
@@ -3939,48 +4066,60 @@ return {
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\window.html',
 	params = {} },
 	['zip module'] = {
-	desc = [[The zip module returns a unique object Zip to create, read, write and list a ZIP file. The ZIP file format is a common archive and compression standard defined by PKWARE Inc.]],
+	desc = [[The zip module provides properties and functions to create, read, write and list a ZIP file. The ZIP file format is a common archive and compression standard defined by PKWARE Inc.]],
 	addr = 'https:\\\\www.luart.org\\doc\\zip\\index.html',
 	params = {} },
+	['zip.isvalid(file)'] = {
+	desc = [[The isvalid() function checks wether a file represent a valid ZIP archive.]],
+	addr = 'https:\\\\www.luart.org\\doc\\zip\\isvalid.html',
+	params = {
+		{
+			name = [[file]],
+			desc = [[ A string or a File object, to be checked for ZIP validity. ]],
+			color = 'brightwhite'}, nil} },
 	['Zip:close() method'] = {
-	desc = [[Closes the zip archive.]],
+	desc = [[Closes the zip archive. Zip values that are garbage collected (for example when going out of scope) are automatically closed before destruction. In this case, it's not necessary to call the Zip:close() method.]],
 	addr = 'https:\\\\www.luart.org\\doc\\zip\\zip-close.html',
 	params = {} },
-	['Zip(filename, mode, level) constructor'] = {
-	desc = [[The Zip constructor opens the zip archive using the specified mode. Returns a Zip value representing the zip archive.]],
+	['Zip(file, mode, level) constructor'] = {
+	desc = [[The Zip constructor opens the specified ZIP archive using the specified mode. Returns a Zip value representing the ZIP archive.]],
 	addr = 'https:\\\\www.luart.org\\doc\\zip\\zip-constructor.html',
 	params = {
 		{
-			name = [[filename]],
-			desc = [[ A string that contains the zip filename. ]],
-			color = 'lightred'}, 
+			name = [[file]],
+			desc = [[ A string or a File object, representing the ZIP archive to be opened. ]],
+			color = 'brightwhite'}, 
 		{
 			name = [[mode]],
 			desc = [[ An optional string that indicate the open mode : 
         - "read" : The zip archive is open for reading (the zip archive must exist). It's the default mode. 
         - "append" : The zip archive is open for appending (the zip archive must exist). 
         - "write" : The zip archive is open for writing (the zip archive is created and overwrites any previous existing archive). ]],
-			color = 'lightred'}, nil} },
-	['Zip.count read property'] = {
+			color = 'lightpurple'}, nil} },
+	['Zip.count readonly property'] = {
 	desc = [[Get the number of entries in the zip archive.]],
 	addr = 'https:\\\\www.luart.org\\doc\\zip\\zip-count.html',
 	params = {} },
-	['Zip.error read property'] = {
+	['Zip.error readonly property'] = {
 	desc = [[Get the last error message after a zip operation failed.]],
 	addr = 'https:\\\\www.luart.org\\doc\\zip\\zip-error.html',
 	params = {} },
-	['Zip : extract(path, dir) method'] = {
+	['Zip : extract(path, dir, use_entrypath) method'] = {
 	desc = [[Extract on the disk an entry with the given path/name in the Zip archive. The Zip archive should have been previously opened in "read" mode.]],
 	addr = 'https:\\\\www.luart.org\\doc\\zip\\zip-extract.html',
 	params = {
 		{
 			name = [[path]],
 			desc = [[ A string representing the path and/or the name of the entry in the Zip archive to be extracted. ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[dir]],
 			desc = [[ An optional destination folder where the entry will be extracted on the disk, as a string or a Directory value.If omitted, the entry will be extracted in the current directory. ]],
-			color = 'gray'}, nil} },
+			color = 'gray'}, 
+		{
+			name = [[use_entrypath]],
+			desc = [[ An optional boolean value that indicate to extract the entry conserving its path or not. ]],
+			color = 'lightyellow'}, nil} },
 	['Zip : extractall(dir) method'] = {
 	desc = [[Extract on the disk all the content of the Zip archive. The Zip archive should have been previously opened in "read" mode.]],
 	addr = 'https:\\\\www.luart.org\\doc\\zip\\zip-extractall.html',
@@ -3989,6 +4128,10 @@ return {
 			name = [[dir]],
 			desc = [[ The destination folder where the entire archive content will be extracted on the disk, as a string or a Directory value.If omitted, the archive will be extracted in the current folder. ]],
 			color = 'gray'}, nil} },
+	['Zip.file readonly property'] = {
+	desc = [[Get the File object representing the current opened ZIP archive.]],
+	addr = 'https:\\\\www.luart.org\\doc\\zip\\zip-file.html',
+	params = {} },
 	['Zip : isdirectory(path) method'] = {
 	desc = [[Check if the entry with the given path/name in the Zip archive represents a directory. The Zip archive should have been previously opened in "read" mode.]],
 	addr = 'https:\\\\www.luart.org\\doc\\zip\\zip-isdirectory.html',
@@ -3996,8 +4139,8 @@ return {
 		{
 			name = [[path]],
 			desc = [[ A string representing the path and/or the name of the entry in the Zip archive. ]],
-			color = 'lightred'}, nil} },
-	['Zip.iszip64 read property'] = {
+			color = 'lightpurple'}, nil} },
+	['Zip.iszip64 readonly property'] = {
 	desc = [[Checks if the zip archive uses the ZIP64 extensions (for zip archives larger than 4 GiB).]],
 	addr = 'https:\\\\www.luart.org\\doc\\zip\\zip-iszip64.html',
 	params = {} },
@@ -4009,21 +4152,6 @@ return {
 	desc = [[The length operator # applied on a Zip object returns the total number of entries that the zip archive contains. The Zip.count property returns the same value.]],
 	addr = 'https:\\\\www.luart.org\\doc\\zip\\zip-length.html',
 	params = {} },
-	['Zip:open(mode, level) method'] = {
-	desc = [[Open the zip archive using the specified mode and level compression.]],
-	addr = 'https:\\\\www.luart.org\\doc\\zip\\zip-open.html',
-	params = {
-		{
-			name = [[mode]],
-			desc = [[ An optional string that indicate the open mode : 
-        - "read" : The zip archive is open for reading (the zip archive must exist). It's the default mode. 
-        - "append" : The zip archive is open for appending (the zip archive must exist). 
-        - "write" : The zip archive is open for writing (the zip archive is created and overwrites any previous existing archive). ]],
-			color = 'lightred'}, 
-		{
-			name = [[level]],
-			desc = [[ An optional number that indicate the compression level, from 0 (no compression) to 10 (maximum compression level), defaulting to 6. ]],
-			color = 'lightyellow'}, nil} },
 	['Zip : read(path) method'] = {
 	desc = [[Reads an entry in memory at the given path/name in the Zip archive. The Zip archive should have been previously opened in "read" mode.]],
 	addr = 'https:\\\\www.luart.org\\doc\\zip\\zip-read.html',
@@ -4031,7 +4159,7 @@ return {
 		{
 			name = [[path]],
 			desc = [[ A string representing the path and/or the name of the entry in the Zip archive. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Zip:reopen(mode, level) method'] = {
 	desc = [[Closes the zip archive and reopens it using the specified mode and level compression.]],
 	addr = 'https:\\\\www.luart.org\\doc\\zip\\zip-reopen.html',
@@ -4042,12 +4170,12 @@ return {
         - "read" : The zip archive is open for reading (the zip archive must exist). It's the default mode. 
         - "append" : The zip archive is open for appending (the zip archive must exist). 
         - "write" : The zip archive is open for writing (the zip archive is created and overwrites any previous existing archive). ]],
-			color = 'lightred'}, 
+			color = 'lightpurple'}, 
 		{
 			name = [[level]],
 			desc = [[ An optional number that indicate the compression level, from 0 (no compression) to 10 (maximum compression level), defaulting to 6. ]],
 			color = 'lightyellow'}, nil} },
-	['Zip.size read property'] = {
+	['Zip.size readonly property'] = {
 	desc = [[Get the size in bytes of the zip archive.]],
 	addr = 'https:\\\\www.luart.org\\doc\\zip\\zip-size.html',
 	params = {} },
@@ -4065,7 +4193,7 @@ return {
 		{
 			name = [[path]],
 			desc = [[ An optional string representing the path and/or the name of the new entry in the Zip archive. If omitted, the new entry will be archived at the root of the Zip archive, using the name provided by the entry parameter. ]],
-			color = 'lightred'}, nil} },
+			color = 'lightpurple'}, nil} },
 	['Zip'] = {
 	desc = [[The Zip Object provides Zip file capabilities. Because the "zip" module contains only the Zip Object, requiring the "zip" module returns directly the Zip object]],
 	addr = 'https:\\\\www.luart.org\\doc\\zip\\zip.html',
