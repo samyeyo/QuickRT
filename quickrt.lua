@@ -11,7 +11,8 @@ local console = require 'console'
 local readline = require "readline"
 local indent = require "indent"
 
-console.title = "QuickRT - Powerful REPL for LuaRT"
+console.title = "QuickRT - REPL for LuaRT"
+console.fontsize = 14
 
 -- clear command : clears the screen
 function clear()
