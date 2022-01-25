@@ -6,7 +6,7 @@
 ![Windows](https://badgen.net/badge/Windows/Vista%20and%20later/blue?icon=windows)
 [![QuickRT license](https://badgen.net/badge/License/MIT/green)](#)
 
-QuickRT is a LuaRT console REPL that allows you to easily prototype, test, and learn Lua programming.
+QuickRT is a Lua console REPL that allows you to easily prototype, test, and learn Lua programming with LuaRT, the Windows programming framework.
 
 [Features](#features) |
 [Getting started](#getting-started) |
@@ -17,29 +17,34 @@ QuickRT is a LuaRT console REPL that allows you to easily prototype, test, and l
 
 ## Features
 
-- Old school console interpreter.
+- Lua 5.4 interactive REPL (Read-Print-Eval-Loop)
 - Lua colored syntax highlighting.
 - Multiline editing with indentation.
 - Autocompletion.
 - Command history.
 - LuaRT documentation included.
-- Support UTF8 characters.
+- UTF8 characters support.
 
 ## Installation
 
-[LuaRT](https://www.luart.org) should have been previously installed. Open a LuaRT console and go to the directory where you've downloaded QuickRT source files.
+### Running QuickRT from sources
+[LuaRT](https://www.luart.org) must have been previously installed. Doubleclick on the quickrt.lua  file in the Windows explorer to launch QuickRT.
+
+Alternatively, open a LuaRT console and go to the directory where you've downloaded QuickRT source files.
 Then type the following command :
 
 ```batch
 luart quickrt.lua
 ```
+### Running QuickRT from release package
+Go to the folder where you have extracted QuickRT.exe and doubleclick on it in the Windows explorer .
 
 ## Getting started
 
-To get you started, type the following commands :
+To get you started with QuickRT, type the following commands :
 
 ```lua
-help("topic")      -- search help for topic
+help("topic")      -- search help for "topic"
 clear()            -- clears the screen
 a                  -- shows the value of variable 'a'
 5+5                -- shows the result of 5+5
@@ -47,6 +52,6 @@ print("hello")     -- calls a function and shows its result
 pr                 -- type "pr" then press the TAB key to use autocompletion (should find 'print')
 ```
 
-You can use last entered commands by pressing the UP and DOWN arrow keys.
+You can use last entered commands by pressing the &#8593; and &#8595; keys.
 
 [demo]: contrib/QuickRT.webp
