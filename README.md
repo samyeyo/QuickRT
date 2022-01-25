@@ -37,7 +37,8 @@ Then type the following command :
 luart quickrt.lua
 ```
 ### Running QuickRT from release package
-Go to the folder where you have extracted QuickRT.exe and doubleclick on it in the Windows explorer .
+No need to previously install LuaRT with the compiled release package.
+Go to the folder where you have extracted QuickRT.exe and doubleclick on it in the Windows explorer.
 
 ## Getting started
 
