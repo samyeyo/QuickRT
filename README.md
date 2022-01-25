@@ -6,7 +6,7 @@
 ![Windows](https://badgen.net/badge/Windows/Vista%20and%20later/blue?icon=windows)
 [![QuickRT license](https://badgen.net/badge/License/MIT/green)](#)
 
-QuickRT is a Lua console REPL that allows you to easily prototype, test, and learn Lua programming with LuaRT, the Windows programming framework.
+QuickRT is a Lua console REPL to easily prototype, test, and learn Lua programming with LuaRT, the Windows programming framework.
 
 [Features](#features) |
 [Getting started](#getting-started) |
