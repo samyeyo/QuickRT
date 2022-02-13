@@ -6,7 +6,7 @@
 ![Windows](https://badgen.net/badge/Windows/Vista%20and%20later/blue?icon=windows)
 [![QuickRT license](https://badgen.net/badge/License/MIT/green)](#)
 
-QuickRT is a Lua console REPL that allows you to easily prototype, test, and learn Lua programming with LuaRT, the Windows programming framework.
+QuickRT is a Lua console REPL to easily prototype, test, and learn Lua programming with LuaRT, the Windows programming framework.
 
 [Features](#features) |
 [Getting started](#getting-started) |
@@ -37,7 +37,8 @@ Then type the following command :
 luart quickrt.lua
 ```
 ### Running QuickRT from release package
-Go to the folder where you have extracted QuickRT.exe and doubleclick on it in the Windows explorer .
+No need to previously install LuaRT with the compiled release package.
+Go to the folder where you have extracted QuickRT.exe and doubleclick on it in the Windows explorer.
 
 ## Getting started
 
