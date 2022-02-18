@@ -13,6 +13,7 @@ local highlight = require "highlighter"
 local history = {}
 
 local function readline(prompt)
+
 	local isend = false
 	if prompt ~= nil then
 		console.writecolor("blue", prompt)
@@ -23,12 +24,22 @@ local function readline(prompt)
 		prompt =  string.char(13, 0xE2, 0x96, 0xBA, 32)
 		console.writecolor("blue", prompt)
 	end
-	local str = str or ""
+	local str = ""
 	local pos = console.x
 	local history_index = #history
+	local cursor = 0
 	local tab_index = 0
 	local tab_pos
 	local tab_list = {}
+	
+	local function insert_char(c)
+		str = str:sub(1, cursor)..c..str:sub(cursor+1, -1)
+		console.x = pos + 1
+		console.write(str)
+		cursor = cursor + 1
+		console.x = cursor + pos + 1
+	end
+	
 	while (true) do 
 		local c, special = console.readchar()
 		if not special then
@@ -69,16 +80,19 @@ local function readline(prompt)
 				end
 			elseif c == "\b" then
 				if console.x > pos then
-					console.write("\b \b")
-					str = str:sub(1, -2)
+					-- str = str:sub(1, -2)
+					console.x = pos + 1
+					str = str:sub(1, cursor-1)..str:sub(cursor+1, -1)
+					console.write(str.." ")
+					console.x = cursor + pos
 					tab_index = 0
 					tab_list = {}
+					cursor = cursor - 1
 				end
 			elseif c == '\3' then
 				sys.exit()
 			else
-				console.write(c)
-				str = str..c
+				insert_char(c)
 			end
 		elseif c == "H" then
 			if history_index > 0 then
@@ -92,6 +106,7 @@ local function readline(prompt)
 				console.x = pos + 1
 				console.write(str)
 				console.x = pos + 1 + #str
+				cursor = #str
 			end
 		elseif c == "P" then
 			if history_index < #history then
@@ -105,7 +120,23 @@ local function readline(prompt)
 				console.x = pos + 1
 				console.write(str)
 				console.x = pos + 1 + #str
+				cursor = #str
 			end
+		elseif c == "s" then
+			cursor = 0
+			console.x = pos + 1 
+		elseif c == "t" then
+			cursor = #str
+			console.write(string.rep('\b', #str)) 
+			console.x = cursor + pos + 1 
+		elseif c == "K" and cursor > 0 then
+			cursor = cursor - 1
+			console.x = cursor + pos + 1
+		elseif c == "M" and cursor < #str then
+			cursor = cursor + 1
+			console.x = cursor + pos + 1
+		elseif c:byte(1) > 0x7F then
+			insert_char(c)
 		end
 		tab_index = 0
 		tab_list = {}
