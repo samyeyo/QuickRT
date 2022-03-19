@@ -8,11 +8,13 @@
 
 
 local console = require 'console'
-local readline = require "readline"
+require "readline"
 local indent = require "indent"
 
 console.title = "QuickRT - REPL for LuaRT"
-console.fontsize = 14
+console.fullscreen = true
+console.font = "consolas"
+console.fontsize = 26
 
 -- clear command : clears the screen
 function clear()
@@ -39,7 +41,7 @@ console.writecolor("blue", string.char(0xE2, 0x94, 0x82),"\n")
 console.writecolor("blue", string.char(0xE2, 0x95, 0xB0)..string.rep(string.char(0xE2, 0x94, 0x81), 36)..string.char(0xE2, 0x95, 0xAF).."\n")
 
 -- Environment for Lua commands
-local env = { }
+env = { }
 setmetatable(env, { __index = function(t, key)
 						return _G[key]
 					end})
@@ -48,7 +50,7 @@ setmetatable(env, { __index = function(t, key)
 while true do
 	console.write("\n")
 	-- Read
-	local cmd = indent(readline())
+	local cmd = indent(readline(nil, env))
 	if cmd ~= "" then
 		local var = cmd:match("^([%a%s]+)$") or false
 		if var then
