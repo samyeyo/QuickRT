@@ -8,7 +8,7 @@
 
 
 local console = require "console"
-local readline = require "readline"
+require "readline"
 
 local ismultiline = {
 	["function"] = {"function", "end"},
@@ -35,7 +35,7 @@ local function indent(cmd, level)
 			  end
 		end
 		local result = cmd
-		local str = readline(level)
+		local str = readline(level, env)
 		while true do
 			if str:match("(%w+)$") == multiline[2] or str:match("(})$")==multiline[2] or str:match("^(%w+)")==multiline[2] then
 				cmd = result.."\n"..indent(str, level);
