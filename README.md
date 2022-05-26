@@ -28,7 +28,7 @@ QuickRT is a Lua console REPL to easily prototype, test, and learn Lua programmi
 ## Installation
 
 ### Running QuickRT from sources
-[LuaRT](https://www.luart.org) must have been previously installed. Doubleclick on the quickrt.lua  file in the Windows explorer to launch QuickRT.
+[LuaRT](https://www.luart.org) must have been previously installed. Doubleclick on the quickrt.lua file in the Windows explorer to launch QuickRT.
 
 Alternatively, open a LuaRT console and go to the directory where you've downloaded QuickRT source files.
 Then type the following command :
@@ -37,8 +37,8 @@ Then type the following command :
 luart quickrt.lua
 ```
 ### Running QuickRT from release package
-No need to previously install LuaRT.
-Go to the folder where you have extracted the release package and doubleclick on **QuickRT.exe** it in the Windows explorer.
+No need to previously install LuaRT in this case.
+Go to the folder where you have extracted the release package and doubleclick on **QuickRT.exe** in the Windows explorer.
 
 ## Getting started
 
