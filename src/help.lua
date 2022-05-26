@@ -117,7 +117,8 @@ local function search(helpitem)
 		searchfor(helpitem:capitalize(), "property", write_property) or
 		searchfor(helpitem, "property", write_property) or
 		searchfor(helpitem:capitalize(), "method", write_method) or
-		searchfor(helpitem, "method", write_method) or
+		searchfor(helpitem:gsub(":", "."), "constructor", write_method) or
+		searchfor(helpitem:gsub("%.", ":"), "method", write_method) or
 		searchfor(helpitem, "%(", write_function)
 		if not result then
 			console.writecolor("lightred", "no help entry for ")
@@ -126,4 +127,5 @@ local function search(helpitem)
 	end
 	console.write("\n")
 end
-search (arg[2])
+
+return search
