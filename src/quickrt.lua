@@ -14,7 +14,7 @@ local indent = require "indent"
 console.title = "QuickRT - REPL for LuaRT"
 console.fullscreen = true
 console.font = "consolas"
-console.fontsize = 26
+console.fontsize = 22
 
 -- clear command : clears the screen
 function clear()
@@ -46,6 +46,13 @@ setmetatable(env, { __index = function(t, key)
 						return _G[key]
 					end})
 
+local function print_result(val, ch)
+	if type(val) == "string" then
+		val = '"'..val..'"'
+	end
+	console.writecolor('gray', tostring(val)..ch) 
+end
+			
 -- Read Eval Print Loop : REPL
 while true do
 	console.write("\n")
@@ -54,7 +61,7 @@ while true do
 	if cmd ~= "" then
 		local var = cmd:match("^([%a%s]+)$") or false
 		if var then
-			console.writecolor('gray', tostring(env[var]).."\n") 
+			print_result(env[var], "\n")
 		else
 			-- Eval
 			local func, err = load("return "..cmd, nil, nil, env)	
@@ -66,7 +73,7 @@ while true do
 				if results[1] == true then
 					if #results > 1 then
 						for i = 2, #results do
-							console.writecolor('gray', tostring(results[i]).."\t") 
+							print_result(results[i], "\t")
 						end
 						console.write("\n")
 					end

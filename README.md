@@ -18,7 +18,7 @@ QuickRT is a Lua console REPL to easily prototype, test, and learn Lua programmi
 ## Features
 
 - Lua 5.4 interactive REPL (Read-Print-Eval-Loop)
-- Lua colored syntax highlighting.
+- Lua colored syntax highlighting as you type
 - Multiline editing with indentation.
 - Autocompletion.
 - Command history.
@@ -37,8 +37,8 @@ Then type the following command :
 luart quickrt.lua
 ```
 ### Running QuickRT from release package
-No need to previously install LuaRT with the compiled release package.
-Go to the folder where you have extracted QuickRT.exe and doubleclick on it in the Windows explorer.
+No need to previously install LuaRT.
+Go to the folder where you have extracted the release package and doubleclick on **QuickRT.exe** it in the Windows explorer.
 
 ## Getting started
 
@@ -51,6 +51,7 @@ a                  -- shows the value of variable 'a'
 5+5                -- shows the result of 5+5
 print("hello")     -- calls a function and shows its result
 pr                 -- type "pr" then press the TAB key to use autocompletion (should find 'print')
+sys.exit()         -- exits QuickRT
 ```
 
 You can use last entered commands by pressing the &#8593; and &#8595; keys.

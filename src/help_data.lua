@@ -57,11 +57,11 @@
         - "lightpurple" 
         - "lightyellow" 
         - "brightwhite"]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-bgcolor.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\bgcolor.html',
 	params = {} },
 	['console.clear(color)'] = {
 	desc = [[Clears the console screen (equivalent of the famous DOS command cls).]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-clear.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\clear.html',
 	params = {
 		{
 			name = [[color]],
@@ -84,40 +84,48 @@
         - "lightred" 
         - "lightpurple" 
         - "lightyellow" 
-        - "white"]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-color.html',
+        - "brightwhite"]],
+	addr = 'https:\\\\www.luart.org\\doc\\console\\color.html',
+	params = {} },
+	['console.cursor readwrite property'] = {
+	desc = [[The console.cursor property is a readwrite property that indicate if the console cursor is visible or not.]],
+	addr = 'https:\\\\www.luart.org\\doc\\console\\cursor.html',
 	params = {} },
 	['console.echo read/write property'] = {
 	desc = [[The console.echo property is a boolean value that sets/gets the current console ECHO mode.A console.echo property set to true means that each character entered in stdin will be written to the console stdout file. It's the default mode. Set that property to false if you don't want to print to the console the entered text (for example, when typing passwords). Set that property to a single char string to print to the console that character when typing on the keyboard.]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-echo.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\echo.html',
 	params = {} },
 	['console.font read/write property'] = {
 	desc = [[Get the current console font, a string value that represent the font name. To set the console.font property, you can assign a string that represent either a font name of an installed system font, or a font file (*.ttf, *.fon...). A File can also be provided, representing a font file.]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-font.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\font.html',
 	params = {} },
 	['console.font read/write property'] = {
-	desc = [[Get or set the console font size, a number that represent the font size in pixels.]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-fontsize.html',
+	desc = [[Get or set the console font size, a number that represent the font size in pixels. If you use Windows Terminal as console, please note that it does not permit to change console font size programmatically, so setting this property will have no effect.]],
+	addr = 'https:\\\\www.luart.org\\doc\\console\\fontsize.html',
 	params = {} },
 	['console.fullscreen read/write property'] = {
 	desc = [[Gets/sets the console fullscreen mode (really fullscreen without the window frame and title bar). To go fullscreen, set the property to true To revert back to normal mode (original size with window frame and title bar) set the property to false. The user can revert back to normal mode by pressing ALT+RETURN.]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-fullscreen.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\fullscreen.html',
 	params = {} },
 	['console.height readonly property'] = {
 	desc = [[The console.height property gets the current console height in character. That value depends on the current console window size.]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-height.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\height.html',
+	params = {} },
+	['console module'] = {
+	desc = [[The console module provides properties and functions for input/ouput facilities, such as printing colored text, reading keys,...Luart uses UTF8 as for strings, with some limits (use of Windows Terminal or Powershell is preferred as cmd.exe is not 100% compatible with UTF8 output).]],
+	addr = 'https:\\\\www.luart.org\\doc\\console\\index.html',
 	params = {} },
 	['console.inverse()'] = {
 	desc = [[Swaps the text color and the background color of the console until another call to this function.]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-inverse.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\inverse.html',
 	params = {} },
 	['console.keyhit readonly property'] = {
 	desc = [[The console.keyhit is a readonly property that returns a boolean value indicating true if a key has been pressed (in that case, a call to console.readchar() will return immediately with the key pressed).]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-keyhit.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\keyhit.html',
 	params = {} },
 	['console.locate(column, line)'] = {
 	desc = [[Position the console cursor to the specified location on the console. The position 1,1 represent the upper left corner in the console.]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-locate.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\locate.html',
 	params = {
 		{
 			name = [[column]],
@@ -129,11 +137,11 @@
 			color = 'lightyellow'}, nil} },
 	['console.open()'] = {
 	desc = [[Opens a console if it does not exists (in Desktop version, when using wluart.exe).]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-open.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\open.html',
 	params = {} },
 	['console.read(length)'] = {
 	desc = [[Reads from the console using console.stdin. The same result can be obtained using console.stdin:read()]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-read.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\read.html',
 	params = {
 		{
 			name = [[length]],
@@ -141,43 +149,43 @@
 			color = 'lightyellow'}, nil} },
 	['console.readchar()'] = {
 	desc = [[Reads a key from the console and returns a corresponding character if possible. That function can read special keys (Function keys, arrows...).]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-readchar.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\readchar.html',
 	params = {} },
 	['console.readln()'] = {
 	desc = [[Reads a line from the console (until a the ENTER/RETURN key has been pressed). The same result can be obtained using console.stdin:readln().]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-readln.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\readln.html',
 	params = {} },
 	['console.readmouse()'] = {
 	desc = [[Wait for the mouse to move or click inside the console.]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-readmouse.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\readmouse.html',
 	params = {} },
 	['console.reset()'] = {
 	desc = [[Resets the console to the default text and background colors. That function is always called before the program terminates.]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-reset.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\reset.html',
 	params = {} },
 	['console.stderr read/write property'] = {
 	desc = [[The console.stderr property gets the current standard console error output file. It's a File value]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-stderr.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\stderr.html',
 	params = {} },
 	['console.stdin read/write property'] = {
 	desc = [[The console.stdin property gets the current standard console input file. It's a File value.]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-stdin.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\stdin.html',
 	params = {} },
 	['console.stdout read/write property'] = {
 	desc = [[The console.stdout property gets the current standard console output file. It's a File value with the same methods and properties.]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-stdout.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\stdout.html',
 	params = {} },
 	['console.title read/write property'] = {
 	desc = [[The console.title gets/sets the console window title.]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-title.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\title.html',
 	params = {} },
 	['console.width readonly property'] = {
 	desc = [[The console.width property gets the current console width in character. That value depends on the current console window size.]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-width.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\width.html',
 	params = {} },
 	['console.write(str1, str2, str3...)'] = {
 	desc = [[Writes to the console using console.stdout. Contrary to console.stdout:write(), console.write() can write more than one string, each string is separated with a space character.]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-write.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\write.html',
 	params = {
 		{
 			name = [[str1, str2,...]],
@@ -185,7 +193,7 @@
 			color = 'lightpurple'}, nil} },
 	['console.writecolor(color, str1, str2, str3...)'] = {
 	desc = [[Writes colored output to the console using console.stdout. The function change the color of the text (not its background). Then the function set back the text color to the previous one. Console.write() can write more than one string, each string is separated with a space character.]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-writecolor.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\writecolor.html',
 	params = {
 		{
 			name = [[color]],
@@ -213,7 +221,7 @@
 			color = 'lightpurple'}, nil} },
 	['console.writeln(str1, str2, str3...)'] = {
 	desc = [[Writes to the console using console.stdout, adding a last newline character. Contrary to console.stdout:writeln(), console.writeln() can write more than one string, each string is separated with a space character.]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-writeln.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\writeln.html',
 	params = {
 		{
 			name = [[str1, str2,...]],
@@ -221,15 +229,11 @@
 			color = 'lightpurple'}, nil} },
 	['console.x read/write property'] = {
 	desc = [[The console.x property gets or sets the current cursor column position.]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-x.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\x.html',
 	params = {} },
 	['console.y read/write property'] = {
 	desc = [[The console.y property gets or sets the current cursor line position.]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\console-y.html',
-	params = {} },
-	['console module'] = {
-	desc = [[The console module provides properties and functions for input/ouput facilities, such as printing colored text, reading keys,...Luart uses UTF8 as for strings, with some limits (use of Windows Terminal or Powershell is preferred as cmd.exe is not 100% compatible with UTF8 output).]],
-	addr = 'https:\\\\www.luart.org\\doc\\console\\index.html',
+	addr = 'https:\\\\www.luart.org\\doc\\console\\y.html',
 	params = {} },
 	['crypto.algorithm read/write property'] = {
 	desc = [[The crypto.algorithm property gets/sets the algorithm used for the crypto.encrypt() and crypto.decrypt() functions. Valid algorithms are : 
@@ -398,15 +402,27 @@
 	desc = [[Luart includes a specific standard library that enhances capabilities for Lua development on Windows operating systems. Please click on the following modules to get more help : sys console net zip crypto ui]],
 	addr = 'https:\\\\www.luart.org\\doc\\modules.html',
 	params = {} },
+	['net.adapters(family)iterator'] = {
+	desc = [[Iterator function to retrieve installed network adapters on the Windows operating system, using the IPv4 or IPv6 address family. family A string representing the IP family address returned at each iteration : "IPv4" or "IPv6".]],
+	addr = 'https:\\\\www.luart.org\\doc\\net\\adapters.html',
+	params = {
+		{
+			name = [[family]],
+			desc = [[ A string representing the IP family address returned at each iteration : "IPv4" or "IPv6". ]],
+			color = 'lightpurple'}, nil} },
+	['net.error readonly property'] = {
+	desc = [[The net.error property gets the last network error message.]],
+	addr = 'https:\\\\www.luart.org\\doc\\net\\error.html',
+	params = {} },
 	['Ftp.active read/write property'] = {
 	desc = [[The Ftp.active property gets or sets the current FTP mode : true to use FTP active mode and false to use FTP passive mode.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-active.html',
 	params = {} },
-	['Ftp:close()'] = {
+	['Ftp:close() method'] = {
 	desc = [[Close the Ftp client connection. Use Ftp:open() to open a new connection. Remember to close the connection when no more needed. Ftp:close() is automatically called before garbage collection of the Ftp object, but this behaviour cannot be predicted]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-close.html',
 	params = {} },
-	['Ftp:command(cmd)'] = {
+	['Ftp:command(cmd) method'] = {
 	desc = [[Sends and executes the provided command to the FTP server.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-command.html',
 	params = {
@@ -434,7 +450,7 @@
 	desc = [[The Ftp.currentdir property gets or sets the current directory on the FTP server as a string.Returns nil if the value could not be retrieved (get more information with the net.error property).]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-currentdir.html',
 	params = {} },
-	['Ftp:download(remote_file)'] = {
+	['Ftp:download(remote_file) method'] = {
 	desc = [[Download a remote file from the connected HTTP server, to the current directory.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-download.html',
 	params = {
@@ -446,7 +462,7 @@
 	desc = [[The Ftp.hostname property gets the current hostname string used for connection to the FTP server or nil if connection have been closed.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-hostname.html',
 	params = {} },
-	['Ftp:list(search_path) iterator'] = {
+	['Ftp:list(search_path) methoditerator'] = {
 	desc = [[Iterates over directory content inside the specified search path.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-list.html',
 	params = {
@@ -454,7 +470,7 @@
 			name = [[search_path]],
 			desc = [[ An optional string that contains a valid directory path or file name. The string can contain wildcards, but no blank spaces are allowed.If not specified, iterate over all current directory contents. ]],
 			color = 'lightpurple'}, nil} },
-	['Ftp:makedir(path)'] = {
+	['Ftp:makedir(path) method'] = {
 	desc = [[Creates a new directory on the FTP server.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-makedir.html',
 	params = {
@@ -462,7 +478,7 @@
 			name = [[path]],
 			desc = [[ A string that contains the name of the directory to be created. This can be either a fully qualified path or a name relative to the current FTP directory. ]],
 			color = 'lightpurple'}, nil} },
-	['Ftp:movefile(path, newpath)'] = {
+	['Ftp:movefile(path, newpath) method'] = {
 	desc = [[Moves the specified file from the FTP server.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-movefile.html',
 	params = {
@@ -474,7 +490,7 @@
 			name = [[newpath]],
 			desc = [[ A string that contains he new file path (partially or fully qualified file names relative to the current FTP directory can be used). ]],
 			color = 'lightpurple'}, nil} },
-	['Ftp:open(url, username, password)'] = {
+	['Ftp:open(url, username, password) method'] = {
 	desc = [[Connect the Ftp client to a new URL, closing the current connection.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-open.html',
 	params = {
@@ -494,7 +510,7 @@
 	desc = [[The Ftp.port property gets the current port used for connection to the FTP server or nil if connection have been closed.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-port.html',
 	params = {} },
-	['Ftp:removedir(path)'] = {
+	['Ftp:removedir(path) method'] = {
 	desc = [[Removes the specified directory from the FTP server.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-removedir.html',
 	params = {
@@ -502,7 +518,7 @@
 			name = [[path]],
 			desc = [[ A string that contains the name of the directory to be removed. This can be either a fully qualified path or a name relative to the current FTP directory. ]],
 			color = 'lightpurple'}, nil} },
-	['Ftp:removefile(path)'] = {
+	['Ftp:removefile(path)method'] = {
 	desc = [[Removes the specified file from the FTP server.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-removefile.html',
 	params = {
@@ -510,13 +526,13 @@
 			name = [[path]],
 			desc = [[ A string that contains the file path to be removed. ]],
 			color = 'lightpurple'}, nil} },
-	['Ftp:upload(file, remote_name)'] = {
+	['Ftp:upload(file, remote_name) method'] = {
 	desc = [[Upload a file to the connected FTP server.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp-upload.html',
 	params = {
 		{
 			name = [[file]],
-			desc = [[ The File object to be uploaded to the server. ]],
+			desc = [[ A string or a File object representing the file to be uploaded to the server. ]],
 			color = 'brightwhite'}, 
 		{
 			name = [[remote_name]],
@@ -526,7 +542,7 @@
 	desc = [[The Ftp Object is a client implementaton of the File Transfer Protocol.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\ftp.html',
 	params = {} },
-	['Http:close()'] = {
+	['Http:close() method'] = {
 	desc = [[Close the Http client connection. Use Http:open() to open a new connection. Remember to close the connection when no more needed. Http:close() is automatically called before garbage collection of the Http object, but this behaviour cannot be predicted]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\http-close.html',
 	params = {} },
@@ -546,7 +562,7 @@
 			name = [[password]],
 			desc = [[ An optional string representing a password for basic HTTP authentication. ]],
 			color = 'lightpurple'}, nil} },
-	['Http:get(uri)'] = {
+	['Http:get(uri) method'] = {
 	desc = [[Send a GET request to the connected HTTP server for a specific resource, and return the server response.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\http-get.html',
 	params = {
@@ -566,7 +582,7 @@
 	desc = [[The Http.mime property gets the mime type string returned by the HTTP server after a request or nil if no request have been previously sent.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\http-mime.html',
 	params = {} },
-	['Http:open(url, username, password)'] = {
+	['Http:open(url, username, password) method'] = {
 	desc = [[Connect the Http client to a new URL, closing the current connection.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\http-open.html',
 	params = {
@@ -618,33 +634,21 @@
 	desc = [[The net module provides properties and functions for networking facilities, such as creating sockets, checking connection, downloading files...]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\index.html',
 	params = {} },
-	['net.adapters(family)iterator'] = {
-	desc = [[Iterator function to retrieve installed network adapters on the Windows operating system, using the IPv4 or IPv6 address family. family A string representing the IP family address returned at each iteration : "IPv4" or "IPv6".]],
-	addr = 'https:\\\\www.luart.org\\doc\\net\\net-adapters.html',
-	params = {
-		{
-			name = [[family]],
-			desc = [[ A string representing the IP family address returned at each iteration : "IPv4" or "IPv6". ]],
-			color = 'lightpurple'}, nil} },
-	['net.error readonly property'] = {
-	desc = [[The net.error property gets the last network error message.]],
-	addr = 'https:\\\\www.luart.org\\doc\\net\\net-error.html',
-	params = {} },
 	['net.ip readonly property'] = {
 	desc = [[The net.ip property gets the current local IPv4 address as a string, used by the Windows operating system to connect to Internet. A valid Internet connection must be available, or returns false otherwise.]],
-	addr = 'https:\\\\www.luart.org\\doc\\net\\net-ip.html',
+	addr = 'https:\\\\www.luart.org\\doc\\net\\ip.html',
 	params = {} },
 	['net.isalive readonly property'] = {
 	desc = [[The net.isalive property checks if a network connection is available, returning true or false otherwise.]],
-	addr = 'https:\\\\www.luart.org\\doc\\net\\net-isalive.html',
+	addr = 'https:\\\\www.luart.org\\doc\\net\\isalive.html',
 	params = {} },
 	['net.publicip readonly property'] = {
 	desc = [[The net.publicip property gets the current public IPv4 address as a string. A valid Internet connection must be available, or returns false otherwise.]],
-	addr = 'https:\\\\www.luart.org\\doc\\net\\net-publicip.html',
+	addr = 'https:\\\\www.luart.org\\doc\\net\\publicip.html',
 	params = {} },
 	['net.resolve(hostname, protocol)'] = {
 	desc = [[Resolves the given hostname to an IP address from the DNS record.]],
-	addr = 'https:\\\\www.luart.org\\doc\\net\\net-resolve.html',
+	addr = 'https:\\\\www.luart.org\\doc\\net\\resolve.html',
 	params = {
 		{
 			name = [[hostname]],
@@ -658,7 +662,7 @@
 			color = 'lightpurple'}, nil} },
 	['net.reverse(ip)'] = {
 	desc = [[Returns the fully qualified domain from an IP address (reverse DNS lookup).]],
-	addr = 'https:\\\\www.luart.org\\doc\\net\\net-reverse.html',
+	addr = 'https:\\\\www.luart.org\\doc\\net\\reverse.html',
 	params = {
 		{
 			name = [[ip]],
@@ -666,7 +670,7 @@
 			color = 'lightpurple'}, nil} },
 	['net.select(socket_array, timeout)'] = {
 	desc = [[Check for network events (readability, writability and errors) on the provided array of Sockets, by updating their corresponding properties Socket.canread, Socket.canwrite, Socket.failed.]],
-	addr = 'https:\\\\www.luart.org\\doc\\net\\net-select.html',
+	addr = 'https:\\\\www.luart.org\\doc\\net\\select.html',
 	params = {
 		{
 			name = [[socket_array]],
@@ -676,14 +680,6 @@
 			name = [[timeout]],
 			desc = [[ An optional number to indicate the maximum time for select to wait for network events, in microseconds. If that argument is not provided, the function wait until a network event occurs. ]],
 			color = 'lightyellow'}, nil} },
-	['net.urlparse(url)'] = {
-	desc = [[Parse a URL into 4 components, corresponding to the structure of a URL : scheme :// hostname / path ? parameters]],
-	addr = 'https:\\\\www.luart.org\\doc\\net\\net-urlparse.html',
-	params = {
-		{
-			name = [[url]],
-			desc = [[ A string representing a URL to parse, for example "https://www.luart.org/index.html". ]],
-			color = 'lightpurple'}, nil} },
 	['Socket : accept() method'] = {
 	desc = [[Accept a connection. The socket should have been set to listen for incoming connections with a previous Socket:bind() call. When used in blocking mode, the method won't return until a connection is present.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\socket-accept.html',
@@ -783,7 +779,7 @@
 	addr = 'https:\\\\www.luart.org\\doc\\net\\socket-shutdown.html',
 	params = {} },
 	['Socket : starttls(certificate, password) method'] = {
-	desc = [[Enable transport level security (TLS -formerly known as SSL) on a Socket connection. The connection must have been initialized with a previous Socket:listen() or Socket:connect() call. Any further calls to Socket:send() or Socket:recv() will be encrypted/decrypted, respectively.]],
+	desc = [[Enable transport level security (TLS -formerly known as SSL) on a Socket connection. The connection must have been initialized with a previous Socket:bind() or Socket:connect() call. Any further calls to Socket:send() or Socket:recv() will be encrypted/decrypted, respectively.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\socket-starttls.html',
 	params = {
 		{
@@ -800,29 +796,37 @@
 	desc = [[The net.Socket Object provides access to the underlying Windows TCP socket implementation.]],
 	addr = 'https:\\\\www.luart.org\\doc\\net\\socket.html',
 	params = {} },
-	['string module'] = {
-	desc = [[Strings in Luart are considered as containers for UTF8 characters, where in standard Lua, strings are containers for bytes, as explained in the Compatibility section The string module in Luart provides generic functions for string manipulation, such as finding and extracting substrings, and pattern matching.That means that all standard Lua strings functions can be used with UTF8 encoded strings using the standard Lua string functions : see the Lua 5.4 String module reference.The string module in Luart adds or modifies the following elements :]],
-	addr = 'https:\\\\www.luart.org\\doc\\string\\index.html',
-	params = {} },
+	['net.urlparse(url)'] = {
+	desc = [[Parse a URL into 4 components, corresponding to the structure of a URL : scheme :// hostname / path ? parameters]],
+	addr = 'https:\\\\www.luart.org\\doc\\net\\urlparse.html',
+	params = {
+		{
+			name = [[url]],
+			desc = [[ A string representing a URL to parse, for example "https://www.luart.org/index.html". ]],
+			color = 'lightpurple'}, nil} },
 	['string.capitalize(str)'] = {
 	desc = [[Capitalize the string : All letters are lowered except the first character of the string.]],
-	addr = 'https:\\\\www.luart.org\\doc\\string\\string-capitalize.html',
+	addr = 'https:\\\\www.luart.org\\doc\\string\\capitalize.html',
 	params = {
 		{
 			name = [[str]],
 			desc = [[ A string that will be capitalized. ]],
 			color = 'lightpurple'}, nil} },
+	['string module'] = {
+	desc = [[Strings in Luart are considered as containers for UTF8 characters, where in standard Lua, strings are containers for bytes, as explained in the Compatibility section The string module in Luart provides generic functions for string manipulation, such as finding and extracting substrings, and pattern matching.That means that all standard Lua strings functions can be used with UTF8 encoded strings using the standard Lua string functions : see the Lua 5.4 String module reference.The string module in Luart adds or modifies the following elements :]],
+	addr = 'https:\\\\www.luart.org\\doc\\string\\index.html',
+	params = {} },
 	['Stringiterable'] = {
 	desc = [[Strings in Luart are iterable through the Luart helper function each, returning the next character in the string with each loop iteration. Each iteration returns a string containing the next character.]],
-	addr = 'https:\\\\www.luart.org\\doc\\string\\string-iterator.html',
+	addr = 'https:\\\\www.luart.org\\doc\\string\\iterator.html',
 	params = {} },
 	['#Stringlength operator'] = {
 	desc = [[The length operator # has the same functionality as in standard Lua. As stated in the Lua 5.4 programming manual (see The Length Operator), the returned length of a string is its number of bytes. This behaviour is respected in Luart to preserve compatibility with standard Lua with ASCII characters. To get the length in characters of a string in Luart, do not use the # operator, use string.len() instead]],
-	addr = 'https:\\\\www.luart.org\\doc\\string\\string-length.html',
+	addr = 'https:\\\\www.luart.org\\doc\\string\\length.html',
 	params = {} },
 	['string.lower(str)'] = {
 	desc = [[Converts all uppercase characters in a string into lowercase characters.]],
-	addr = 'https:\\\\www.luart.org\\doc\\string\\string-lower.html',
+	addr = 'https:\\\\www.luart.org\\doc\\string\\lower.html',
 	params = {
 		{
 			name = [[str]],
@@ -830,7 +834,7 @@
 			color = 'lightpurple'}, nil} },
 	['string.search(str, substring, start)'] = {
 	desc = [[Search for the first occurence of a substring, using plain text (no patterns). Faster than standard string.find]],
-	addr = 'https:\\\\www.luart.org\\doc\\string\\string-search.html',
+	addr = 'https:\\\\www.luart.org\\doc\\string\\search.html',
 	params = {
 		{
 			name = [[str]],
@@ -846,7 +850,7 @@
 			color = 'lightyellow'}, nil} },
 	['string.similarity (str1, str2)'] = {
 	desc = [[Calculate the similarity between two strings, using Levenshtein distance algorithm.]],
-	addr = 'https:\\\\www.luart.org\\doc\\string\\string-similarity.html',
+	addr = 'https:\\\\www.luart.org\\doc\\string\\similarity.html',
 	params = {
 		{
 			name = [[str1, str2]],
@@ -854,7 +858,7 @@
 			color = 'lightpurple'}, nil} },
 	['string.upper(str)'] = {
 	desc = [[Converts all lowercase characters in a string into uppercase characters.]],
-	addr = 'https:\\\\www.luart.org\\doc\\string\\string-upper.html',
+	addr = 'https:\\\\www.luart.org\\doc\\string\\upper.html',
 	params = {
 		{
 			name = [[str]],
@@ -1013,14 +1017,18 @@
 	desc = [[Returns the current elapsed time, that can be used for time-interval measurements.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\clock.html',
 	params = {} },
-	['sys.cmd(command)'] = {
+	['sys.cmd(command, hidden)'] = {
 	desc = [[Executes an operating-system command.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\cmd.html',
 	params = {
 		{
 			name = [[command]],
 			desc = [[ A string that contains the command to send to the command interpreter. ]],
-			color = 'lightpurple'}, nil} },
+			color = 'lightpurple'}, 
+		{
+			name = [[hidden]],
+			desc = [[ An optional boolean value indicating if the command execute in a hidden window, defaulting to true. ]],
+			color = 'lightyellow'}, nil} },
 	['sys.currentdir read/write property'] = {
 	desc = [[The sys.currentdir property get or set a string representing the current working directory.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\currentdir.html',
@@ -1154,10 +1162,6 @@
 	desc = [[Datetime is an Object representation of a moment, a combination of a date and a time.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\datetime.html',
 	params = {} },
-	['sys.Directory'] = {
-	desc = [[Directory is an Object representation of a folder, that may exist or not.]],
-	addr = 'https:\\\\www.luart.org\\doc\\sys\\dir.html',
-	params = {} },
 	['Directory.accessed read/write property'] = {
 	desc = [[The Directory.accessed property set or get a Datetime value indicating when the folder has been last accessed. The folder must exist physically on the disk.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\Directory-accessed.html',
@@ -1226,6 +1230,10 @@
 	desc = [[Deletes the folder physically on the disk and all contained files and subdirectories.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\Directory-removeall.html',
 	params = {} },
+	['sys.Directory'] = {
+	desc = [[Directory is an Object representation of a folder, that may exist or not.]],
+	addr = 'https:\\\\www.luart.org\\doc\\sys\\directory.html',
+	params = {} },
 	['sys.env readonly property'] = {
 	desc = [[Get a table representing environment variables.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\env.html',
@@ -1243,7 +1251,7 @@
 			desc = [[ An optionnal number returned to the operating system. Default value is zero. By convention, a value of zero means that the program completed successfully. A value of -1 means that an error occured. ]],
 			color = 'lightyellow'}, nil} },
 	['File.accessed read/write property'] = {
-	desc = [[The File.accessed property set or get a Datetime value indicating when the file has been last accessed. The file must exist physically on the disk.]],
+	desc = [[The File.accessed property set or get a Datetime value indicating when the file has been last accessed. The file must exist physically on the disk. If the file do not exist, this property returns nil and setting its value will have no effect.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\File-accessed.html',
 	params = {} },
 	['File : close() method'] = {
@@ -1263,7 +1271,7 @@
 			desc = [[ An optional string representing the destination filename, or, use the same filename if omitted. ]],
 			color = 'lightpurple'}, nil} },
 	['File.created read/write property'] = {
-	desc = [[The File.created property set or get a Datetime value indicating when the file has been created. The file must exist physically on the disk.]],
+	desc = [[The File.created property set or get a Datetime value indicating when the file has been created. The file must exist physically on the disk. If the file do not exist, this property returns nil and setting its value will have no effect.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\File-created.html',
 	params = {} },
 	['File.directory readonly property'] = {
@@ -1306,7 +1314,7 @@
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\File-lines.html',
 	params = {} },
 	['File.modified read/write property'] = {
-	desc = [[The File.modified property set or get a Datetime value indicating when the file has been last modified. The file must exist physically on the disk.]],
+	desc = [[The File.modified property set or get a Datetime value indicating when the file has been last modified. The file must exist physically on the disk. If the file do not exist, this property returns nil and setting its value will have no effect.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\File-modified.html',
 	params = {} },
 	['File : move (path) method'] = {
@@ -1522,6 +1530,10 @@
 			name = [[expand]],
 			desc = [[ An optional boolean value. If set to true and the data to write to the registry is a string, all references to environment variables will be expanded once the value is read. References to environment variables are between % chars. ]],
 			color = 'lightyellow'}, nil} },
+	[''] = {
+	desc = [[]],
+	addr = 'https:\\\\www.luart.org\\doc\\sys\\result.html',
+	params = {} },
 	['sys.sleep(delay)'] = {
 	desc = [[Suspend the program execution until the delay elapse.]],
 	addr = 'https:\\\\www.luart.org\\doc\\sys\\sleep.html',
@@ -1554,6 +1566,10 @@
 	['Button:autosize() method'] = {
 	desc = [[Resize the Button automatically to accommodate its content.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Button-autosize.html',
+	params = {} },
+	['Button:center() method'] = {
+	desc = [[Centers the Button on the parent widget.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Button-center.html',
 	params = {} },
 	['Button.constructor(parent, caption, x , y , width , height) constructor'] = {
 	desc = [[The Button constructor returns a Button value representing a push button on the parent object.]],
@@ -1733,6 +1749,10 @@
         - "right" : the Calendar will be aligned along the right border of the parent, preserving its width. 
         - "left" : the Calendar will be aligned along the left border of the parent, preserving its width. ]],
 			color = 'lightpurple'}, nil} },
+	['Calendar:center() method'] = {
+	desc = [[Centers the Calendar on the parent widget.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Calendar-center.html',
+	params = {} },
 	['Calendar.constructor(parent, x , y , width , height) constructor'] = {
 	desc = [[The Calendar constructor returns a Calendar value representing a month calendar to choose a date.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Calendar-constructor.html',
@@ -1832,6 +1852,10 @@
 	desc = [[Show and activate the Calendar (events can now be fired).]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Calendar-show.html',
 	params = {} },
+	['Calendar.tooltip read/write property'] = {
+	desc = [[Get or set the tooltip text that appears when the user moves the mouse over the Calendar, represented as a string value. Set the property to an empty string to remove the tooltip message.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Calendar-tooltip.html',
+	params = {} },
 	['Calendar.visible read/write property'] = {
 	desc = [[Get or set the calendar visibility on screen, a true value means that the Calendar is shown, a false value means that the Calendar is hidden. The calendar.visible property is also affected by the Calendar:show() and Calendar:hide() methods.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Calendar-visible.html',
@@ -1868,6 +1892,10 @@
 	['Checkbox:autosize() method'] = {
 	desc = [[Resize the Checkbox automatically to accommodate its content.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Checkbox-autosize.html',
+	params = {} },
+	['Checkbox:center() method'] = {
+	desc = [[Centers the Checkbox on the parent widget.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Checkbox-center.html',
 	params = {} },
 	['Checkbox.checked read/write property'] = {
 	desc = [[Set or check wether the Checkbox item is selected.]],
@@ -2047,6 +2075,10 @@
         - "right" : the Combobox will be aligned along the right border of the parent, preserving its width. 
         - "left" : the Combobox will be aligned along the left border of the parent, preserving its width. ]],
 			color = 'lightpurple'}, nil} },
+	['Combobox:center() method'] = {
+	desc = [[Centers the Combobox on the parent widget.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Combobox-center.html',
+	params = {} },
 	['Combobox:clear() method'] = {
 	desc = [[Remove all items from the Combobox.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Combobox-clear.html',
@@ -2177,8 +2209,12 @@
 	['Combobox.style read/write property'] = {
 	desc = [[Get or set the current style, a string value, that specifies the Combobox appearance : 
         - "text" : Combobox will display only text items (default). 
-        - "icons" : Combobox will display text items with their icons, using ComboItem:loadicon().]],
+        - "icons" : Combobox will display text items with their icons, using ComboItem:loadicon(). When setting the style property from "icons" to "text" all previously loaded icons are preserved.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Combobox-style.html',
+	params = {} },
+	['Combobox.text read/write property'] = {
+	desc = [[Get or set the current Combobox text content, as a string.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Combobox-text.html',
 	params = {} },
 	['Combobox.visible read/write property'] = {
 	desc = [[Get or set the Combobox visibility on screen, a true value means that the Combobox is shown, a false value means that the Combobox is hidden. The combobox.visible property is also affected by the Combobox:show() and Combobox:hide() methods.]],
@@ -2258,6 +2294,10 @@
         - Caret position is expressed in characters : the caret in position 1 is just before the first character. 
         - Use caret position 0 to reach end of the Edit's content.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Edit-caret.html',
+	params = {} },
+	['Edit:center() method'] = {
+	desc = [[Centers the Edit on the parent widget.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Edit-center.html',
 	params = {} },
 	['Edit.color read/write property'] = {
 	desc = [[Get or set the current Edit text color, that apply to all text content. The color is represented by a number, an RGB value (one byte per primary color). A RGB color can be represented as an hexadecimal number : 0xRRGGBB , RR meaning a 8bit hexadecimal red value, and so on.]],
@@ -2355,6 +2395,10 @@
 	['Edit.modified read/write property'] = {
 	desc = [[Get or set a boolean value, indicating wether the Edit has been modified.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Edit-modified.html',
+	params = {} },
+	['Edit:onCaret() event'] = {
+	desc = [[This event is fired when the Edit cursor position has changed.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Edit-oncaret.html',
 	params = {} },
 	['Edit:onChange() event'] = {
 	desc = [[This event is fired when the user has modified the Edit text content or format. Use the onChange event carefully: changing Edit content text or format during this event will put your program in an infinite loop.]],
@@ -2533,6 +2577,10 @@
 	desc = [[Get a boolean value, indicating wether the user can undo the last Entry operation.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Entry-canundo.html',
 	params = {} },
+	['Entry:center() method'] = {
+	desc = [[Centers the Entry on the parent widget.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Entry-center.html',
+	params = {} },
 	['Entry.constructor(parent, caption, x , y , width , height) constructor'] = {
 	desc = [[The Entry constructor returns a Entry value representing a static text area on the parent object.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Entry-constructor.html',
@@ -2688,7 +2736,7 @@
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Entry-textalign.html',
 	params = {} },
 	['Entry.textlimit read/write property'] = {
-	desc = [[Get or set a number value, indicating the maximum length of the text entered. Setting the property with a value of 0, permits a maximum of 2ïng> characters.]],
+	desc = [[Get or set a number value, indicating the maximum length of the text entered. Setting the property with a value of 0, permits a maximum of 2ï> characters.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Entry-textlimit.html',
 	params = {} },
 	['Entry.tooltip read/write property'] = {
@@ -2756,6 +2804,10 @@
         - "right" : the Groupbox will be aligned along the right border of the parent, preserving its width. 
         - "left" : the Groupbox will be aligned along the left border of the parent, preserving its width. ]],
 			color = 'lightpurple'}, nil} },
+	['Groupbox:center() method'] = {
+	desc = [[Centers the Groupbox on the parent widget.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Groupbox-center.html',
+	params = {} },
 	['Groupbox.constructor(parent, caption, x , y , width , height) constructor'] = {
 	desc = [[The Groupbox constructor returns a Groupbox value representing a group of related controls. Whenever another widget is placed within a Groupbox, that groupbox becomes its parent.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Groupbox-constructor.html',
@@ -2859,7 +2911,7 @@
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\groupbox.html',
 	params = {} },
 	['ui module'] = {
-	desc = [[The ui module provides Objects, and functions to build native Windows GUI applications, known as Desktop applications.]],
+	desc = [[The ui module provides Objects, and functions to build native Windows GUI applications, known as Desktop applications. This module is only available with the Desktop Luartinterpreter wluart.exe]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\index.html',
 	params = {} },
 	['ui.info (msg , title)'] = {
@@ -2930,6 +2982,10 @@
 	['Label:autosize() method'] = {
 	desc = [[Resize the Label automatically to accommodate its contents.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Label-autosize.html',
+	params = {} },
+	['Label:center() method'] = {
+	desc = [[Centers the Label on the parent widget.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Label-center.html',
 	params = {} },
 	['Label.constructor(parent, caption, x , y , width , height) constructor'] = {
 	desc = [[The Label constructor returns a Label value representing a static text area on the parent object.]],
@@ -3106,6 +3162,10 @@
         - "right" : the List will be aligned along the right border of the parent, preserving its width. 
         - "left" : the List will be aligned along the left border of the parent, preserving its width. ]],
 			color = 'lightpurple'}, nil} },
+	['List:center() method'] = {
+	desc = [[Centers the List on the parent widget.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\List-center.html',
+	params = {} },
 	['List:clear() method'] = {
 	desc = [[Remove all items from the List.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\List-clear.html',
@@ -3256,7 +3316,7 @@
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\List-show.html',
 	params = {} },
 	['List:sort(direction) method'] = {
-	desc = [[Change List position and size to be aligned relative to its parent.]],
+	desc = [[Sort the List items.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\List-sort.html',
 	params = {
 		{
@@ -3269,7 +3329,7 @@
 	['List.style read/write property'] = {
 	desc = [[Get or set the current style, a string value, that specifies the List appearance : 
         - "text" : List will display only text items (default). 
-        - "icons" : List will display text items with their icons, using ListItem:loadicon(). When setting the style property from "icons" to "text" all previously loaded icons will be cleared.]],
+        - "icons" : List will display text items with their icons, using ListItem:loadicon(). When setting the style property from "icons" to "text" all previously loaded icons are preserved.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\List-style.html',
 	params = {} },
 	['List.visible read/write property'] = {
@@ -3300,6 +3360,14 @@
 	desc = [[Remove all items from the Menu. An empty Window menu will not be drawn. Adding items to an empty Window menu will draw it again.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Menu-clear.html',
 	params = {} },
+	['Menu.constructor(itemtext1, itemtext2...) constructor'] = {
+	desc = [[The Menu constructor returns a Menu value representing a popup or window menu.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Menu-constructor.html',
+	params = {
+		{
+			name = [[itemtext1...]],
+			desc = [[ A list of optional strings that represent items captions in the Menu. ]],
+			color = 'lightpurple'}, nil} },
 	['Menu.count readonly property'] = {
 	desc = [[Get the current count of menu items.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Menu-count.html',
@@ -3426,6 +3494,178 @@
         - A filter named "All files (*.*)" that correspond to the search pattern "*.*" 
         - A filter named "Text files (*.txt)" that correspond to the search pattern "*.txt" ]],
 			color = 'lightpurple'}, nil} },
+	['Picture:align(alignment) method'] = {
+	desc = [[Change Picture position and size to be aligned relative to its parent.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-align.html',
+	params = {
+		{
+			name = [[alignment]],
+			desc = [[ A string that specifies the Picture alignment : 
+        - "all" : the Picture will be aligned along all the parent borders (and will cover the entire parent client area). 
+        - "bottom" : the Picture will be aligned along the bottom border of the parent, preserving its height. 
+        - "top" : the Picture will be aligned along the the top border of the parent, preserving its height. 
+        - "right" : the Picture will be aligned along the right border of the parent, preserving its width. 
+        - "left" : the Picture will be aligned along the left border of the parent, preserving its width. ]],
+			color = 'lightpurple'}, nil} },
+	['Picture:center() method'] = {
+	desc = [[Centers the Picture on the parent widget.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-center.html',
+	params = {} },
+	['Picture.constructor(parent, image, x , y , width , height) constructor'] = {
+	desc = [[The Picture constructor returns a Picture object representing a static image on the parent object.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-constructor.html',
+	params = {
+		{
+			name = [[parent]],
+			desc = [[ An object that will own the Picture. Parent objects can be any of Window, Groupbox and Tab ]],
+			color = 'brightwhite'}, 
+		{
+			name = [[image]],
+			desc = [[ A File object or a filename string, representing the image to be loaded. ]],
+			color = 'lightpurple'}, 
+		{
+			name = [[x]],
+			desc = [[ An optional number that indicates the Picture horizontal position, in pixels. Zero means the left border of the parent. ]],
+			color = 'lightyellow'}, 
+		{
+			name = [[y]],
+			desc = [[ An optional number that indicates the Picture vertical position, in pixels. Zero means the top border of the parent. ]],
+			color = 'lightyellow'}, 
+		{
+			name = [[width]],
+			desc = [[ An optional number that indicates the Picture width in pixels, autosized to fit text content if omitted. Defaults to the image width if not provided. ]],
+			color = 'lightyellow'}, 
+		{
+			name = [[height]],
+			desc = [[ An optional number that indicates the Picture height in pixels, autosized to fit text content if omitted. Defaults to the image height if not provided. ]],
+			color = 'lightyellow'}, nil} },
+	['Picture.cursor read/write property'] = {
+	desc = [[Get or set the image of the mouse cursor as it hovers over the Picture. Mouse cursors are represented by strings : 
+        - "arrow" : the default mouse cursor. 
+        - "cross" : a crosshair cursor. 
+        - "working" : the standard arrow with a small hourglass. 
+        - "hand" : a hand cursor. 
+        - "help" : the standard arrow with a small question mark. 
+        - "ibeam" : the default I-Beam text cursor. 
+        - "forbidden" : a slashed circle cursor. 
+        - "cardinal" : a four-pointed arrow pointing up, down, right, and left. 
+        - "horizontal" : a double-pointed arrow pointing right and left. 
+        - "vertical" : a double-pointed arrow pointing up and down. 
+        - "leftdiagonal" : a double-pointed arrow pointing topright down to the left. 
+        - "rightdiagonal" : a double-pointed arrow pointing topleft down to the right. 
+        - "up" : an arrow pointing up. 
+        - "wait" : a hourglass cursor. 
+        - "none" : no cursor is displayed. The picture.cursor property affects only the Picture area.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-cursor.html',
+	params = {} },
+	['Picture.enabled read/write property'] = {
+	desc = [[Get or set the picture ability to respond to mouse, and any other events. When set to false, disable the Picture (the user will not be able to interact with it), and picture's events won't be fired anymore.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-enabled.html',
+	params = {} },
+	['Picture.height read/write property'] = {
+	desc = [[Get or set the height of the Picture area. The height starts from 0 (top side of the Picture) and increase to the bottom direction. When changing the Picture.height property, the image expands/shrinks accordingly.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-height.html',
+	params = {} },
+	['Picture:hide() method'] = {
+	desc = [[Hide and deactivate the Picture (events can no longer be fired).]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-hide.html',
+	params = {} },
+	['Picture:load(file) method'] = {
+	desc = [[Load an image on the Picture object.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-load.html',
+	params = {
+		{
+			name = [[file]],
+			desc = [[ A File object or a filename string, representing the image to be loaded. ]],
+			color = 'lightpurple'}, nil} },
+	['Picture:onClick() event'] = {
+	desc = [[This event is fired when the user has clicked on the Picture.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-onclick.html',
+	params = {} },
+	['Picture:onContext() event'] = {
+	desc = [[This event is fired when the user has clicked on the picture with the right mouse button.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-oncontext.html',
+	params = {} },
+	['Picture:onCreate() event'] = {
+	desc = [[This event is fired when the Picture object has just been created (just after the Picture:constructor() call). This event is particularly interesting when you want to inherit from a widget object, or to initialize its properties.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-oncreate.html',
+	params = {} },
+	['Picture:onDoubleClick() event'] = {
+	desc = [[This event is fired when the user has doubleclicked on the Picture.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-ondoubleclick.html',
+	params = {} },
+	['Picture:onHide() event'] = {
+	desc = [[This event is fired when the Picture is hidden (with a call to Picture:hide() or setting the Picture.visible property to false).]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-onhide.html',
+	params = {} },
+	['Picture:onHover (x, y) event'] = {
+	desc = [[This event is fired when the user moves the mouse pointer over the Picture.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-onhover.html',
+	params = {
+		{
+			name = [[x]],
+			desc = [[ The horizontal position of the mouse in the Picture area (zero means the left border of the widget). ]],
+			color = 'lightyellow'}, 
+		{
+			name = [[y]],
+			desc = [[ The vertical position of the mouse in the Picture area (zero means the top border of the widget). ]],
+			color = 'lightyellow'}, nil} },
+	['Picture:onLeave() event'] = {
+	desc = [[This event is fired when the mouse cursor leaves the Picture.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-onleave.html',
+	params = {} },
+	['Picture:onShow() event'] = {
+	desc = [[This event is fired when the Picture is shown (with a call to Picture:show() or setting the Picture.visible property to true).]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-onshow.html',
+	params = {} },
+	['Picture.parent readonly property'] = {
+	desc = [[Get the parent object that owns the Picture.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-parent.html',
+	params = {} },
+	['Picture:resize(factor) method'] = {
+	desc = [[Resize the Picture.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-resize.html',
+	params = {
+		{
+			name = [[factor]],
+			desc = [[ A number representing the factor to apply on the Picture's width and height (proportional resizing). Use a factor of 1 to get the original size back. ]],
+			color = 'lightyellow'}, nil} },
+	['Picture:save(file) method'] = {
+	desc = [[Save the Picture image on disk.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-save.html',
+	params = {
+		{
+			name = [[file]],
+			desc = [[ A File object or a filename string, representing the image to be saved. ]],
+			color = 'lightpurple'}, nil} },
+	['Picture:show() method'] = {
+	desc = [[Show and activate the Picture (events can now be fired).]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-show.html',
+	params = {} },
+	['Picture.tooltip read/write property'] = {
+	desc = [[Get or set the tooltip text that appears when the user moves the mouse over the control, represented as a string value. Set the property to an empty string to remove the tooltip message.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-tooltip.html',
+	params = {} },
+	['Picture.visible read/write property'] = {
+	desc = [[Get or set the picture visibility on screen, a true value means that the Picture is shown, a false value means that the Picture is hidden. The picture.visible property is also affected by the Picture:show() and Picture:hide() methods.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-visible.html',
+	params = {} },
+	['Picture.width read/write property'] = {
+	desc = [[Get or set the Picture area width. The width starts from 0 (left side of the Picture) and increases to the right direction. When changing the Picture.width property, the image expands/shrinks accordingly.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-width.html',
+	params = {} },
+	['Picture.x read/write property'] = {
+	desc = [[Get or set the Picture horizontal position. The horizontal position start from 0 (left side of the parent widget) and increase to the right (right side of the parent widget).]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-x.html',
+	params = {} },
+	['Picture.y read/write property'] = {
+	desc = [[Get or set the Picture vertical position. The vertical position start from 0 (top side of the parent widget) and increase to the bottom side of the parent widget.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Picture-y.html',
+	params = {} },
+	['ui.Picture'] = {
+	desc = [[Picture is an Object representation of a static image.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\picture.html',
+	params = {} },
 	['Radiobutton:align(alignment) method'] = {
 	desc = [[Change Radiobutton position and size to be aligned relative to its parent.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Radiobutton-align.html',
@@ -3442,6 +3682,10 @@
 	['Radiobutton:autosize() method'] = {
 	desc = [[Resize the Radiobutton automatically to accommodate its content.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Radiobutton-autosize.html',
+	params = {} },
+	['Radiobutton:center() method'] = {
+	desc = [[Centers the Radiobutton on the parent widget.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Radiobutton-center.html',
 	params = {} },
 	['Radiobutton.checked read/write property'] = {
 	desc = [[Set or check wether the Radiobutton item is selected. 
@@ -3643,6 +3887,10 @@
         - "right" : the Tab will be aligned along the right border of the parent, preserving its width. 
         - "left" : the Tab will be aligned along the left border of the parent, preserving its width. ]],
 			color = 'lightpurple'}, nil} },
+	['Tab:center() method'] = {
+	desc = [[Centers the Tab on the parent widget.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tab-center.html',
+	params = {} },
 	['Tab:clear() method'] = {
 	desc = [[Remove all items from the Tab.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tab-clear.html',
@@ -3784,6 +4032,12 @@
 	desc = [[Show and activate the Tab (events can now be fired).]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tab-show.html',
 	params = {} },
+	['Tab.style read/write property'] = {
+	desc = [[Get or set the current style, a string value, that specifies the Tab appearance : 
+        - "text" : Tree will display only text items (default). 
+        - "icons" : Tree will display text items with their icons, using Tabtem:loadicon(). When setting the style property from "icons" to "text" all previously loaded icons are preserved.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tab-style.html',
+	params = {} },
 	['Tab.visible read/write property'] = {
 	desc = [[Get or set the Tab visibility on screen, a true value means that the Tab is shown, a false value means that the Tab is hidden. The tab.visible property is also affected by the Tab:show() and Tab:hide() methods.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tab-visible.html',
@@ -3803,6 +4057,280 @@
 	['ui.Tab'] = {
 	desc = [[Tab is an Object representation of a notebook, which manages multiple views with associated tabs.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\tab.html',
+	params = {} },
+	['Tree:add(itemtext) method'] = {
+	desc = [[Add an item to the Tree.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-add.html',
+	params = {} },
+	['Tree:align(alignment) method'] = {
+	desc = [[Change Tree position and size to be aligned relative to its parent.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-align.html',
+	params = {
+		{
+			name = [[alignment]],
+			desc = [[ A string that specifies the Tree alignment : 
+        - "all" : the Tree will be aligned along all the parent borders (and will cover the entire parent client area). 
+        - "bottom" : the Tree will be aligned along the bottom border of the parent, preserving its height. 
+        - "top" : the Tree will be aligned along the the top border of the parent, preserving its height. 
+        - "right" : the Tree will be aligned along the right border of the parent, preserving its width. 
+        - "left" : the Tree will be aligned along the left border of the parent, preserving its width. ]],
+			color = 'lightpurple'}, nil} },
+	['Tree:center() method'] = {
+	desc = [[Centers the Tree on the parent widget.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-center.html',
+	params = {} },
+	['Tree:clear() method'] = {
+	desc = [[Remove all items and subitems from the Tree.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-clear.html',
+	params = {} },
+	['Tree.constructor(parent, items, x , y , width , height) constructor'] = {
+	desc = [[The Tree constructor returns a Tree value representing a scrollable tree of items.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-constructor.html',
+	params = {
+		{
+			name = [[parent]],
+			desc = [[ An object that will own the Tree. Parent objects can be any of Window, Groupbox and Tab ]],
+			color = 'brightwhite'}, 
+		{
+			name = [[items]],
+			desc = [[ A table containing a list of strings with or without tables values (each string will be inserted in the Tree, tables represent subitems). ]],
+			color = 'green'}, 
+		{
+			name = [[x]],
+			desc = [[ An optional number that indicates the Tree horizontal position, in pixels. Zero means the left border of the parent. ]],
+			color = 'lightyellow'}, 
+		{
+			name = [[y]],
+			desc = [[ An optional number that indicates the Tree vertical position, in pixels. Zero means the top border of the parent. ]],
+			color = 'lightyellow'}, 
+		{
+			name = [[width]],
+			desc = [[ An optional number that indicates the Tree width in pixels. ]],
+			color = 'lightyellow'}, 
+		{
+			name = [[height]],
+			desc = [[ An optional number that indicates the Tree height in pixels. ]],
+			color = 'lightyellow'}, nil} },
+	['Tree.count readonly property'] = {
+	desc = [[Get the current root items count in the Tree, subitems not included.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-count.html',
+	params = {} },
+	['Tree.cursor read/write property'] = {
+	desc = [[Get or set the image of the mouse cursor as it hovers over the Tree. Mouse cursors are represented by strings : 
+        - "arrow" : the default mouse cursor. 
+        - "cross" : a crosshair cursor. 
+        - "working" : the standard arrow with a small hourglass. 
+        - "hand" : a hand cursor. 
+        - "help" : the standard arrow with a small question mark. 
+        - "ibeam" : the default I-Beam text cursor. 
+        - "forbidden" : a slashed circle cursor. 
+        - "cardinal" : a four-pointed arrow pointing up, down, right, and left. 
+        - "horizontal" : a double-pointed arrow pointing right and left. 
+        - "vertical" : a double-pointed arrow pointing up and down. 
+        - "leftdiagonal" : a double-pointed arrow pointing topright down to the left. 
+        - "rightdiagonal" : a double-pointed arrow pointing topleft down to the right. 
+        - "up" : an arrow pointing up. 
+        - "wait" : a hourglass cursor. 
+        - "none" : no cursor is displayed. The tree.cursor property affects only the Tree area.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-cursor.html',
+	params = {} },
+	['Tree.enabled read/write property'] = {
+	desc = [[Get or set the tree ability to respond to mouse, and any other events. When set to false, disable the Tree (the user will not be able to interact with it), and tree's events won't be fired anymore.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-enabled.html',
+	params = {} },
+	['Tree.font read/write property'] = {
+	desc = [[Get the Tree font, a string value that represent the font name. To set the Tree.font property, you can assign a string that represent either a font name of an installed system font, or a font file (*.ttf, *.fon...). A File can also be provided, representing a font file. Note that only the font family is changed. The font style and font size are not affected (see the Tree.fontstyle and the Tree.fontsize properties). By default, an Tree uses the same font as its parent widget]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-font.html',
+	params = {} },
+	['Tree.fontsize read/write property'] = {
+	desc = [[Get or set the Tree font size, a number that represent the font size in pixels.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-fontsize.html',
+	params = {} },
+	['Tree.fontstyle read/write property'] = {
+	desc = [[Get or set the Tree font style, a table value that contains the following keys/values : 
+        - "italic" : set to true if the font is in italic. 
+        - "underline" : set to true if the font is underlined. 
+        - "strike" : set to true if the font is striked. 
+        - "thin" : set to true if the font is thin. 
+        - "bold" : set to true if the font is bold. 
+        - "heavy" : set to true if the font is heavy.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-fontstyle.html',
+	params = {} },
+	['Tree.height read/write property'] = {
+	desc = [[Get or set the height of the Tree. The height starts from 0 (top side of the Tree) and increase to the bottom direction.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-height.html',
+	params = {} },
+	['Tree:hide() method'] = {
+	desc = [[Hide and deactivate the Tree (events can no longer be fired).]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-hide.html',
+	params = {} },
+	['Tree.items read/write propertyiterable'] = {
+	desc = [[Provides access to the Tree items.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-items.html',
+	params = {} },
+	['Tree:onChange(item , action) event'] = {
+	desc = [[This event is fired when an item have been removed or edited by the user after a call to TreeItem:edit().]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-onchange.html',
+	params = {
+		{
+			name = [[If an item has been removed, this argument represent the item text as a string If an item have been edited, this argument represent the edited TreeItem. action]],
+			desc = [[ A string that represent the change that occured : 
+        - "removed" : TreeItem has been removed. 
+        - "edited" : TreeItem has been edited. ]],
+			color = 'lightpurple'}, nil} },
+	['Tree:onContext(item) event'] = {
+	desc = [[This event is fired when a right-click occured on the Tree.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-oncontext.html',
+	params = {} },
+	['Tree:onCreate() event'] = {
+	desc = [[This event is fired when the Tree object has just been created (just after the Tree:constructor() call). This event is particularly interesting when you want to inherit from a widget object, or to initialize its properties.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-oncreate.html',
+	params = {} },
+	['Tree:onDoubleClick(TreeItem) event'] = {
+	desc = [[Event fired when the user has double-clicked on an item in the Tree.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-ondoubleclick.html',
+	params = {} },
+	['Tree:onHide() event'] = {
+	desc = [[This event is fired when the Tree is hidden (with a call to Tree:hide() or setting the Tree.visible property to false).]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-onhide.html',
+	params = {} },
+	['Tree:onHover() event'] = {
+	desc = [[This event is fired when the user moves the mouse pointer over the Tree.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-onhover.html',
+	params = {
+		{
+			name = [[x]],
+			desc = [[ The horizontal position of the mouse in the Tree area (zero means the left border of the widget). ]],
+			color = 'lightyellow'}, 
+		{
+			name = [[y]],
+			desc = [[ The vertical position of the mouse in the Tree area (zero means the top border of the widget). ]],
+			color = 'lightyellow'}, nil} },
+	['Tree:onLeave() event'] = {
+	desc = [[This event is fired when the mouse cursor leaves the Tree.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-onleave.html',
+	params = {} },
+	['Tree:onSelect(TreeItem) event'] = {
+	desc = [[Event fired when the user has choosen an item in the Tree.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-onselect.html',
+	params = {} },
+	['Tree:onShow() event'] = {
+	desc = [[This event is fired when the Tree is shown (with a call to Tree:show() or setting the Tree.visible property to true).]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-onshow.html',
+	params = {} },
+	['Tree.parent readonly property'] = {
+	desc = [[Get the parent object that owns the Tree.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-parent.html',
+	params = {} },
+	['Tree:remove(text | item) method'] = {
+	desc = [[Remove an item from the Tree. text | item A string, representing the item's text or the TreeItem to be removed.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-remove.html',
+	params = {} },
+	['Tree.selected readonly property'] = {
+	desc = [[Get or set the current selected TreeItem or nil if no selection has been made.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-selected.html',
+	params = {} },
+	['Tree:show() method'] = {
+	desc = [[Show and activate the Tree (events can now be fired).]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-show.html',
+	params = {} },
+	['Tree:sort(subitems) method'] = {
+	desc = [[Sort Tree root items by ascending order.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-sort.html',
+	params = {
+		{
+			name = [[subitems]],
+			desc = [[ An optional boolean value that specifies to sort all levels of child items below the root items, defaulting to false. ]],
+			color = 'lightyellow'}, nil} },
+	['Tree.style read/write property'] = {
+	desc = [[Get or set the current style, a string value, that specifies the Tree appearance : 
+        - "text" : Tree will display only text items (default). 
+        - "icons" : Tree will display text items with their icons, using TreeItem:loadicon(). When setting the style property from "icons" to "text" all previously loaded icons are preserved.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-style.html',
+	params = {} },
+	['Tree.visible read/write property'] = {
+	desc = [[Get or set the Tree visibility on screen, a true value means that the Tree is shown, a false value means that the Tree is hidden. The tree.visible property is also affected by the Tree:show() and Tree:hide() methods.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-visible.html',
+	params = {} },
+	['Tree.width read/write property'] = {
+	desc = [[Get or set the Tree width. The width starts from 0 (left side of the Tree) and increases to the right direction.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-width.html',
+	params = {} },
+	['Tree.x read/write property'] = {
+	desc = [[Get or set the Tree horizontal position. The horizontal position start from 0 (left side of the parent widget) and increase to the right (right side of the parent widget).]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-x.html',
+	params = {} },
+	['Tree.y read/write property'] = {
+	desc = [[Get or set the Tree vertical position. The vertical position start from 0 (top side of the parent widget) and increase to the bottom side of the parent widget.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Tree-y.html',
+	params = {} },
+	['ui.Tree'] = {
+	desc = [[Tree is an Object representation of a single line text field.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\tree.html',
+	params = {} },
+	['TreeItem:add(itemtext) method'] = {
+	desc = [[Add a subitem to the current TreeItem.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\TreeItem-add.html',
+	params = {} },
+	['TreeItem:clear() method'] = {
+	desc = [[Removes all the TreeItem's subitems.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\TreeItem-clear.html',
+	params = {} },
+	['TreeItem.count readonly property'] = {
+	desc = [[Get the item's count of subitems, or 0 if the item don't have any subitems.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\TreeItem-count.html',
+	params = {} },
+	['TreeItem:edit() method'] = {
+	desc = [[Begins in-place editing of the specified TreeItem's caption. When the user has done editing it, the parent Tree receives an TreeItem:onChange() event.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\TreeItem-edit.html',
+	params = {} },
+	['TreeItem:expand(expanding) method'] = {
+	desc = [[Expands or collapses the subitems associated with the TreeItem.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\TreeItem-expand.html',
+	params = {} },
+	['TreeItem:loadicon(path, index) method'] = {
+	desc = [[Loads an item icon, displayed to the left of the item's text.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\TreeItem-loadicon.html',
+	params = {
+		{
+			name = [[path]],
+			desc = [[ Represent any of the following possible icon locations : 
+        - A string which represents the path to an ".ico" icon file, or gets the icon associated with the provided file/directory. 
+        - A Widget object, whose icon will be used by the item. 
+        - A Directory or File object, representing an ".ico" file, or gets the icon associated with the provided file/directory. 
+        - A Buffer object, whose binary content will represent the icon. ]],
+			color = 'brightwhite'}, 
+		{
+			name = [[index]],
+			desc = [[ The icon index, a optional number starting from 1, that represent the icon to select. ]],
+			color = 'lightyellow'}, nil} },
+	['TreeItem.parent readonly property'] = {
+	desc = [[Get the Object that owns the item : either a TreeItem for subitem or a Tree for root items. TreeItems are ephemeral objects that are instantiated by their parent objects, with the "items" property. It is not recommended that you store them in a table or use them globally since they may refer to items that have been deleted.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\TreeItem-parent.html',
+	params = {} },
+	['TreeItem:remove() method'] = {
+	desc = [[Removes the item from the Tree it belongs to.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\TreeItem-remove.html',
+	params = {} },
+	['TreeItem:show() method'] = {
+	desc = [[Ensures that the TreeItem is visible, expanding the parent item or scrolling the Tree, if necessary.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\TreeItem-show.html',
+	params = {} },
+	['TreeItem:sort(recursive) method'] = {
+	desc = [[Sorts all the subitems in ascending order.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\TreeItem-sort.html',
+	params = {} },
+	['TreeItem.subitems read/write properties'] = {
+	desc = [[Get or set the item's subitems, a proxy table that contains a tree of TreeItem, indexed only by their TreeItem.text property.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\TreeItem-subitems.html',
+	params = {} },
+	['TreeItem.textread/write property'] = {
+	desc = [[Get or set the item caption as a string.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\TreeItem-text.html',
+	params = {} },
+	['TreeItem'] = {
+	desc = [[TreeItem is an Object representation of an existing item in a Tree. TreeItem Object has no constructor, it cannot be instantiated by programming. Only its owner can create it dynamically. TreeItems are ephemeral objects that are instantiated by their owner objects, with the "items" property. It is not recommended that you store them in a table or use them globally since they may refer to items that have been deleted.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\treeitem.html',
 	params = {} },
 	['ui.update()'] = {
 	desc = [[Update the user interface, process Windows messages and call widgets events.]],
@@ -3833,6 +4361,10 @@
         - "right" : the Window will be aligned along the right border of the Desktop, preserving its width. 
         - "left" : the Window will be aligned along the left border of the Desktop, preserving its width. ]],
 			color = 'lightpurple'}, nil} },
+	['Window:center() method'] = {
+	desc = [[Centers the Window on the parent widget.]],
+	addr = 'https:\\\\www.luart.org\\doc\\ui\\Window-center.html',
+	params = {} },
 	['Window.constructor(title, style, width , height) constructor'] = {
 	desc = [[The Window constructor returns a Window value representing a user interface dialog. Please note that a created Window will not be shown until its method Window:show() has been called.]],
 	addr = 'https:\\\\www.luart.org\\doc\\ui\\Window-constructor.html',
@@ -4145,7 +4677,9 @@
 	addr = 'https:\\\\www.luart.org\\doc\\zip\\zip-iszip64.html',
 	params = {} },
 	['Zipiterable'] = {
-	desc = [[Zip objects are iterable through the Luart helper function each, returning the next entry name as a string in the zip archive with each loop iteration.]],
+	desc = [[Zip objects are iterable through the Luart helper function each, returning two values at each iteration : 
+        - The next entry name in the zip archive as a string. 
+        - A boolean value indicating if this entry represent a directory.]],
 	addr = 'https:\\\\www.luart.org\\doc\\zip\\zip-iterator.html',
 	params = {} },
 	['#Ziplength operator'] = {

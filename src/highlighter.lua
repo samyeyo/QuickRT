@@ -59,10 +59,11 @@ function highlight(line)
 ::continue::
 		prev=ch
 	end
+	if #word > 0 then
+		console.writecolor(keywords[word] and "cyan" or (tonumber(word) and "green" or "white"), word)
+	end
 	if start_str ~= nil then
 		console.writecolor("lightpurple", str)
-	elseif #word > 0 then
-		console.writecolor(keywords[word] and "cyan" or (tonumber(word) and "green" or "white"), word)
 	end
 end
 

@@ -126,5 +126,4 @@ local function search(helpitem)
 	end
 	console.write("\n")
 end
-
-return search 
+search (arg[2])

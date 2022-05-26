@@ -168,6 +168,13 @@ function readline(prompt, env)
 			elseif c == "I" and cursor < str:len() then
 				cursor = cursor + 1
 				console.x = cursor + pos + 1
+			elseif c == "P" and cursor < str:len() then
+				console.x = pos + 1
+				str = str:sub(1, cursor)..str:sub(cursor+2, -1)
+				highlight(str.." ")
+				console.x = cursor + pos + 1
+				tab_index = 0
+				tab_list = {}		
 			end
 		end
 		tab_index = 0
