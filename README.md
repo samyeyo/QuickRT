@@ -1,6 +1,6 @@
 <div align="center">
 
-# QuickRT
+![QuickRT][logo] 
 
 [![Made with LuaRT](https://badgen.net/badge/Made%20with/LuaRT/yellow)](https://www.luart.org/)
 ![Windows](https://badgen.net/badge/Windows/Vista%20and%20later/blue?icon=windows)
@@ -58,3 +58,4 @@ sys.exit()         -- exits QuickRT
 You can use last entered commands by pressing the &#8593; and &#8595; keys.
 
 [demo]: contrib/QuickRT.webp
+[logo]: contrib/QuickRT.png
