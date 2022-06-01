@@ -75,6 +75,12 @@ while true do
 						for i = 2, #results do
 							print_result(results[i], "\t")
 						end
+						if #results == 2 then
+							env._ = results[2]
+						else
+							env._ = results
+							table.remove(env._, 1)
+						end
 						console.write("\n")
 					end
 				else
