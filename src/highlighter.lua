@@ -9,7 +9,10 @@
 
 local console = require "console"
 
-local keywords = { ["and"] = true, ["break"] = true, ["do"] = true, ["else"] = true, ["elseif"] = true, ["end"] = true, ["false"] = true, ["for"]  = true, ["function"] = true, ["goto"] = true, ["if"] = true, ["in"] = true, ["local"] = true, ["nil"] = true, ["not"] = true, ["or"] = true, ["repeat"] = true, ["return"] = true, ["then"] = true, ["true"] = true, ["until"] = true, ["while"] = true }
+local keywords = { ["and"] = true, ["break"] = true, ["do"] = true, ["else"] = true, ["elseif"] = true, ["end"] = true, ["false"] = true, ["for"]  = true, ["function"] = true, ["goto"] = true, ["if"] = true, ["in"] = true, ["local"] = true, ["nil"] = true, ["not"] = true, ["or"] = true, ["repeat"] = true, ["return"] = true, ["then"] = true, ["true"] = true, ["until"] = true, ["while"] = true, ["each"] = true }
+
+local types = { ["Object"] = true, ["property"] = true, ["method"] = true, ["function"] = true, ["table"] = true }
+
 
 function highlight(line)
 	local word = "" 
@@ -44,7 +47,7 @@ function highlight(line)
 						console.write(string.rep(" ", 25))
 						console.write(string.rep("\b", 26))
 					end
-					console.writecolor(keywords[word] and "cyan" or (tonumber(word) and "green" or "white"), word)
+					console.writecolor(types[word] and "gray" or (keywords[word] and "cyan") or (tonumber(word) and "green" or "white"), word)
 				end
 				word = ""
 				console.write(ch)
