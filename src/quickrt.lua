@@ -10,11 +10,10 @@
 local console = require 'console'
 require "readline"
 local indent = require "indent"
+local pretty = require "pretty"
 
 console.title = "QuickRT - REPL for LuaRT"
-console.fullscreen = true
 console.font = "consolas"
-console.fontsize = 22
 
 -- clear command : clears the screen
 function clear()
@@ -41,16 +40,13 @@ console.writecolor("blue", string.char(0xE2, 0x94, 0x82),"\n")
 console.writecolor("blue", string.char(0xE2, 0x95, 0xB0)..string.rep(string.char(0xE2, 0x94, 0x81), 36)..string.char(0xE2, 0x95, 0xAF).."\n")
 
 -- Environment for Lua commands
-env = { }
+env = { console = console }
 setmetatable(env, { __index = function(t, key)
 						return _G[key]
 					end})
 
 local function print_result(val, ch)
-	if type(val) == "string" then
-		val = '"'..val..'"'
-	end
-	console.writecolor('gray', tostring(val)..ch) 
+	console.writecolor('gray', highlight(pretty(val)..ch))
 end
 			
 -- Read Eval Print Loop : REPL
@@ -64,24 +60,28 @@ while true do
 			print_result(env[var], "\n")
 		else
 			-- Eval
+      local is_expr = false
 			local func, err = load("return "..cmd, nil, nil, env)	
 			if func == fail then
 				func, err = load(cmd, nil, nil, env)
+        is_expr = true
 			end	
 			if func ~= fail then
 				local results = table.pack(pcall(func, true))
 				if results[1] == true then
 					if #results > 1 then
 						for i = 2, #results do
-							print_result(results[i], "\t")
+							print_result(results[i], " ")
 						end
 						console.write("\n")
+         			elseif is_expr then
+            			print_result(nil, "\n")
 					end
 				else
-					console.writecolor("lightred", results[2]:gsub("^%[.*%d%: ", "").."\n")				
+					console.writecolor("lightred", ">>> "..results[2]:gsub("^%[.*%d%: ", "").."\n")				
 				end
 			else
-				console.writecolor("lightred", err:gsub("^%[.*%d%: ", "").."\n")				
+				console.writecolor("lightred", ">>> "..err:gsub("^%[.*%d%: ", "").."\n")				
 			end
 		end
 	end
