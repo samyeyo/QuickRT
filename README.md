@@ -17,10 +17,11 @@ QuickRT is a Lua console REPL to easily prototype, test, and learn Lua programmi
 
 ## Features
 
-- Lua 5.4 interactive REPL (Read-Print-Eval-Loop)
+- Lua 5.4.4 interactive REPL (Read-Print-Eval-Loop)
 - Lua colored syntax highlighting as you type
 - Multiline editing with indentation.
 - Autocompletion.
+- Pretty printing of results
 - Command history.
 - LuaRT documentation included.
 - UTF8 characters support.
@@ -55,5 +56,6 @@ sys.exit()         -- exits QuickRT
 ```
 
 You can use last entered commands by pressing the &#8593; and &#8595; keys.
+You can also quit QuickRT with CTRL+C.
 
 [demo]: contrib/QuickRT.webp
