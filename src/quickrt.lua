@@ -73,6 +73,12 @@ while true do
 						for i = 2, #results do
 							print_result(results[i], " ")
 						end
+						if #results == 2 then
+							env._ = results[2]
+						else
+							env._ = results
+							table.remove(env._, 1)
+						end
 						console.write("\n")
          			elseif is_expr then
             			print_result(nil, "\n")

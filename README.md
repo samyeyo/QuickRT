@@ -1,10 +1,11 @@
 <div align="center">
 
-# QuickRT
+![QuickRT][logo] 
 
 [![Made with LuaRT](https://badgen.net/badge/Made%20with/LuaRT/yellow)](https://www.luart.org/)
 ![Windows](https://badgen.net/badge/Windows/Vista%20and%20later/blue?icon=windows)
 [![QuickRT license](https://badgen.net/badge/License/MIT/green)](#)
+[![Twitter Follow](https://img.shields.io/twitter/follow/__LuaRT__?style=social)](https://www.twitter.com/__LuaRT__)
 
 QuickRT is a Lua console REPL to easily prototype, test, and learn Lua programming with LuaRT, the Windows programming framework.
 
@@ -59,3 +60,4 @@ You can use last entered commands by pressing the &#8593; and &#8595; keys.
 You can also quit QuickRT with CTRL+C.
 
 [demo]: contrib/QuickRT.webp
+[logo]: contrib/QuickRT.png
