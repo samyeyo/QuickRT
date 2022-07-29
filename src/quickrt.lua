@@ -60,11 +60,9 @@ while true do
 			print_result(env[var], "\n")
 		else
 			-- Eval
-      local is_expr = false
 			local func, err = load("return "..cmd, nil, nil, env)	
 			if func == fail then
 				func, err = load(cmd, nil, nil, env)
-        is_expr = true
 			end	
 			if func ~= fail then
 				local results = table.pack(pcall(func, true))
@@ -80,8 +78,6 @@ while true do
 							table.remove(env._, 1)
 						end
 						console.write("\n")
-         			elseif is_expr then
-            			print_result(nil, "\n")
 					end
 				else
 					console.writecolor("lightred", ">>> "..results[2]:gsub("^%[.*%d%: ", "").."\n")				
