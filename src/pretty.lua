@@ -28,7 +28,7 @@ local function pretty(value, isobj, name)
     else
       result = t
     end
-  elseif name == nil and (t == "table" or mt) then
+  elseif name == nil and t ~= "userdata" and (t == "table" or mt) then
     local out = {}
     local obj = type(mt) == "table" and ((mt.__type or mt.__properties) or (type(mt.__name) == "string"))
     result = "{"
