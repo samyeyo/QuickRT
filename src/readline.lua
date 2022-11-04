@@ -9,8 +9,11 @@
 
 local console = require "console"
 local highlight = require "highlighter"
+local history = require("history").load()
 
-local history = {}
+sys.atexit = function ()
+	require("history").save(history)
+end
 
 function readline(prompt, env)
 	local isend = false
