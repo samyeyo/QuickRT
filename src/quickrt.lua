@@ -35,7 +35,7 @@ console.writecolor("brightwhite", "Lua")
 console.writecolor('yellow', "RT ")
 console.writecolor("blue", " "..string.char(0xE2, 0x94, 0x82).."\n")
 console.writecolor("lightblue", string.char(0xE2, 0x94, 0x82).." ")
-console.write("Copyright "..string.char(0xC2, 0xA9).." 2022, Samir Tine       ")
+console.write("Copyright "..string.char(0xC2, 0xA9).." 2023, Samir Tine       ")
 console.writecolor("blue", string.char(0xE2, 0x94, 0x82),"\n")
 console.writecolor("blue", string.char(0xE2, 0x95, 0xB0)..string.rep(string.char(0xE2, 0x94, 0x81), 36)..string.char(0xE2, 0x95, 0xAF).."\n")
 
@@ -55,7 +55,7 @@ while true do
 	-- Read
 	local cmd = indent(readline(nil, env))
 	if cmd ~= "" then
-		local var = cmd:match("^([%a%s_]+)$") or false
+		local var = cmd:wmatch("^([%a%s_]+)$") or false
 		if var then
 			print_result(env[var], "\n")
 		else

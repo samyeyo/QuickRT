@@ -23,7 +23,7 @@ function readline(prompt, env)
         console.x = console.x - 2
 		isend = true
 	else
-		prompt =  string.char(13, 0xE2, 0x96, 0xBA, 32)
+		prompt =  string.wchar(13, 0xE2, 0x96, 0xBA, 32)
 		console.writecolor("blue", prompt)
 	end
 	local str = ""
@@ -35,7 +35,7 @@ function readline(prompt, env)
 	local tab_list = {}
 	
 	local function insert_char(c)
-		str = str:sub(1, cursor)..c..str:sub(cursor+1, -1)
+		str = str:wsub(1, cursor)..c..str:wsub(cursor+1, -1)
 		console.x = pos + 1
 		highlight(str)
 		cursor = cursor + 1
@@ -61,18 +61,18 @@ function readline(prompt, env)
 			elseif c == "\t" then
 				if tab_index == 0 then
 					local kind
-					local inmember = str:match("[%.%:]+%w*$") ~= nil
-					local word = str:match("(%w+)$") or ""
+					local inmember = str:wmatch("[%.%:]+%w*$") ~= nil
+					local word = str:wmatch("(%w+)$") or ""
 					if inmember then
-						kind = str:match("%w+([%.:]+)"..word.."$")
+						kind = str:wmatch("%w+([%.:]+)"..word.."$")
 					end
-					local where = env[str:match("(%w+)[%.%:]+"..word.."$")]
+					local where = env[str:wmatch("(%w+)[%.%:]+"..word.."$")]
 					if where == nil then
 						if inmember then
 							goto continue
 						else
 							for k, v in pairs(_G) do
-								if k:match("^"..word) then
+								if k:wmatch("^"..word) then
 									tab_list[#tab_list+1] = k
 								end
 							end
@@ -80,28 +80,28 @@ function readline(prompt, env)
 					end
 					if inmember then
 						for k, v in pairs(where) do
-							if ((kind == ':' and type(v) == "function") or kind == ".") and (word == "" or k:match("^"..word)) then
+							if ((kind == ':' and type(v) == "function") or kind == ".") and (word == "" or k:wmatch("^"..word)) then
 								tab_list[#tab_list+1] = k
 							end
 						end
 						if kind == "." then
 							local mt = getmetatable(where) or {}
 							for k, v in pairs(mt.__type or mt.__properties or {}) do
-								if word == "" or k:match("^[gs]+et_"..word) then
-									tab_list[#tab_list+1] = k:gsub("^[gs]+et_", "")
+								if word == "" or k:wmatch("^[gs]+et_"..word) then
+									tab_list[#tab_list+1] = k:gwsub("^[gs]+et_", "")
 								end
 							end	
 						end
 					end
 					tab_index = tab_list[1] ~= nil and 1 or 0
-					tab_pos = str:len()-(inmember and str:match("[%.:](%w*)$"):len() or word:len())
+					tab_pos = str:wlen()-(inmember and str:wmatch("[%.:](%w*)$"):wlen() or word:wlen())
 				end
 				if tab_index > 0 then
 					local tabitem = tab_list[tab_index]
 					local lastpos = console.x
 					cursor = tab_pos
-					console.write(string.rep('\b \b', str:len())) 
-					str = str:gsub("(%w+)$", "")
+					console.write(string.rep('\b \b', str:wlen())) 
+					str = str:gwsub("(%w+)$", "")
 					for ch in each(tabitem) do
 						insert_char(ch)
 					end
@@ -112,7 +112,7 @@ function readline(prompt, env)
 			elseif c == "\b" then
 				if console.x > pos then
 					console.x = pos + 1
-					str = str:sub(1, cursor-1)..str:sub(cursor+1, -1)
+					str = str:wsub(1, cursor-1)..str:wsub(cursor+1, -1)
 					highlight(str.." ")
 					console.x = cursor + pos
 					tab_index = 0
@@ -136,8 +136,8 @@ function readline(prompt, env)
 					console.write(string.rep(" ", console.width - console.x-1))
 					console.x = pos + 1
 					highlight(str)
-					console.x = pos + 1 + str:len()
-					cursor = str:len()
+					console.x = pos + 1 + str:wlen()
+					cursor = str:wlen()
 				end
 			-- user pressed the DOWN arrow key
 			elseif c == "J" then
@@ -151,8 +151,8 @@ function readline(prompt, env)
 					console.write(string.rep(" ", console.width - console.x-1))
 					console.x = pos + 1
 					highlight(str)
-					console.x = pos + 1 + str:len()
-					cursor = str:len()
+					console.x = pos + 1 + str:wlen()
+					cursor = str:wlen()
 				end
 			-- user pressed the HOME key
 			elseif c == "F" then
@@ -160,20 +160,20 @@ function readline(prompt, env)
 				console.x = pos + 1 
 			-- user pressed the END key
 			elseif c == "E" then
-				cursor = str:len()
-				console.write(string.rep('\b', str:len())) 
+				cursor = str:wlen()
+				console.write(string.rep('\b', str:wlen())) 
 				console.x = cursor + pos + 1
 			-- user pressed the LEFT arrow key
 			elseif c == "G" and cursor > 0 then
 				cursor = cursor - 1
 				console.x = cursor + pos + 1
 			-- user pressed the RIGHT arrow key
-			elseif c == "I" and cursor < str:len() then
+			elseif c == "I" and cursor < str:wlen() then
 				cursor = cursor + 1
 				console.x = cursor + pos + 1
-			elseif c == "P" and cursor < str:len() then
+			elseif c == "P" and cursor < str:wlen() then
 				console.x = pos + 1
-				str = str:sub(1, cursor)..str:sub(cursor+2, -1)
+				str = str:wsub(1, cursor)..str:wsub(cursor+2, -1)
 				highlight(str.." ")
 				console.x = cursor + pos + 1
 				tab_index = 0
