@@ -22,7 +22,7 @@ function highlight(line)
 	local prev = ""
 
 	for ch in each(line) do
-		if ch:wmatch("['\"]") then
+		if ch:umatch("['\"]") then
 			if start_str ~= nil then 
 				if start_str == ch and prev ~= '\\' then
 					if #word > 0 then
@@ -37,12 +37,12 @@ function highlight(line)
 			else
 				start_str = ch
 			end
-		elseif ch:wmatch("[%s%p]") then
+		elseif ch:umatch("[%s%p]") then
 			if start_str == nil then
 				if ch == '(' and #word then
 					console.writecolor("lightyellow", word)
 				elseif #word > 0 then
-					if line:wfind(word) == 1 and (word == "else" or word == "end" or word == "elseif" or word == "until") then
+					if line:ufind(word) == 1 and (word == "else" or word == "end" or word == "elseif" or word == "until") then
 						console.write("\b\b\b")
 						console.write(string.rep(" ", 25))
 						console.write(string.rep("\b", 26))

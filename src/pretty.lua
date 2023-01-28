@@ -14,17 +14,17 @@ local function pretty(value, isobj, name)
   local result = ""
   
   if t == "string" then
-    if value:wfind("[\r\n]") then
-      result = "[["..value:gwsub("\\","/").."]]"
+    if value:ufind("[\r\n]") then
+      result = "[["..value:gusub("\\","/").."]]"
     else
-      result = '"'..value:gwsub("\\","/")..'"'
+      result = '"'..value:gusub("\\","/")..'"'
     end
   elseif t == "number" or t == "boolean" then
     result = tostring(value)
   elseif t == "function" then
     if isobj then
       local meta = getmetatable(isobj)
-      result = name:wfind("^[gs]et_") and (meta and meta.__type and isobj[name:wfind("^[gs]et_")] or "property") or (meta and (meta.__type or meta.__mt) and "method" or "function")
+      result = name:ufind("^[gs]et_") and (meta and meta.__type and isobj[name:ufind("^[gs]et_")] or "property") or (meta and (meta.__type or meta.__mt) and "method" or "function")
     else
       result = t
     end

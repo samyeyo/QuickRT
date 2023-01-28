@@ -55,7 +55,7 @@ while true do
 	-- Read
 	local cmd = indent(readline(nil, env))
 	if cmd ~= "" then
-		local var = cmd:wmatch("^([%a%s_]+)$") or false
+		local var = cmd:umatch("^([%a%s_]+)$") or false
 		if var then
 			print_result(env[var], "\n")
 		else
