@@ -14,7 +14,7 @@ local db = require "help_data"
 
 local function searchfor(name, pattern, func)
 	for key, item in pairs(db) do
-		if key:search(name) and key:match(pattern) then
+		if key:usearch(name) and key:match(pattern) then
 			func(key, item)
 			return true
 		end
@@ -32,7 +32,7 @@ local function write_module(name, mod)
 	console.write(mod.desc)
 	console.writecolor("cyan", "\n\nContains: ")
 	for key, item in pairs(db) do
-		if key:search(name) and not key:search("constructor") then
+		if key:usearch(name) and not key:usearch("constructor") then
 			local helpitem = key:gsub(name, ""):gsub("%s?%b()", "()"):gsub("readonly property", ""):gsub("read/write property", ""):gsub("iterator", "")
 			if helpitem:lower() == helpitem  then
 				console.write(helpitem.." ")
