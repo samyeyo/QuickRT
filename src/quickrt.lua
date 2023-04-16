@@ -1,5 +1,5 @@
 -- | LuaRT - A Windows programming framework for Lua
--- | Luart.org, Copyright (c) Tine Samir 2022.
+-- | Luart.org, Copyright (c) Tine Samir 2023
 -- | See Copyright Notice in LICENSE.TXT
 -- |------------------------------------------------
 -- | QuickRT.lua | Powerful REPL for LuaRT
@@ -11,6 +11,14 @@ local console = require 'console'
 require "readline"
 local indent = require "indent"
 local pretty = require "pretty"
+
+local luart_path = sys.registry.read('HKEY_CURRENT_USER', 'Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\LuaRT', 'InstallLocation', false) or false
+
+if not luart_path then
+	luart_path = sys.File(arg[0]).directory.parent.parent.fullpath.."/modules/?/?.dll"
+end
+
+package.cpath = package.cpath..";"..luart_path
 
 console.title = "QuickRT - REPL for LuaRT"
 console.font = "consolas"
