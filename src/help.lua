@@ -7,7 +7,6 @@
 
 
 
-local net = require "net"
 local console = require "console"
 local db = require "help_data"
 
