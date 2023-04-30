@@ -45,7 +45,8 @@ local function pretty(value, isobj, name)
       if obj then           
         prop, n = k:gsub("^set_", "get_"):gsub("^[gs]et_", "")
       end
-      local space = string.len(prop) < 6 and "\t\t\t= " or "\t\t= "      
+      prop = pretty(prop, false)
+      local space = string.len(tostring(prop)) < 6 and "\t\t\t= " or "\t\t= "      
       if out[prop] == nil then
         if obj == true then
           result = result.."\n  "..prop..space..pretty(v, value, k)..","
