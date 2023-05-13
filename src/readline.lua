@@ -10,6 +10,7 @@
 local console = require "console"
 local highlight = require "highlighter"
 local history = require("history").load()
+local ui = require "ui"
 
 sys.atexit = function ()
 	require("history").save(history)
@@ -43,6 +44,9 @@ function readline(prompt, env)
 	end
 	
 	while (true) do 
+		while not console.keyhit do
+			ui.update()
+		end
 		local c, special = console.readchar()
 		console.cursor = false
 		if not special then
