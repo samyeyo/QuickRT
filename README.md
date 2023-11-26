@@ -18,7 +18,7 @@ QuickRT is a Lua console REPL to easily prototype, test, and learn Lua programmi
 
 ## Features
 
-- Lua 5.4.5 interactive REPL (Read-Print-Eval-Loop)
+- Lua 5.4.6 interactive REPL (Read-Print-Eval-Loop)
 - Lua colored syntax highlighting as you type
 - Multiline editing with indentation.
 - Autocompletion.

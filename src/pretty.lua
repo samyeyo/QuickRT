@@ -28,7 +28,7 @@ local function pretty(value, isobj, name)
     else
       result = t
     end
-  elseif name == nil and t ~= "userdata" and (t == "table" or mt)  and (t == "table" or (getmetatable(value).__len and pcall(getmetatable(value).__len, value))) then
+  elseif name == nil and t ~= "userdata" and (t == "table" or mt) then
     local out = {}
     local obj = type(mt) == "table" and ((mt.__type or mt.__properties) or (type(mt.__name) == "string"))
     result = "{"
@@ -45,8 +45,7 @@ local function pretty(value, isobj, name)
       if obj then           
         prop, n = k:gsub("^set_", "get_"):gsub("^[gs]et_", "")
       end
-      prop = pretty(prop, false)
-      local space = string.len(tostring(prop)) < 6 and "\t\t\t= " or "\t\t= "      
+      local space = string.len(prop) < 6 and "\t\t\t= " or "\t\t= "      
       if out[prop] == nil then
         if obj == true then
           result = result.."\n  "..prop..space..pretty(v, value, k)..","
@@ -58,13 +57,16 @@ local function pretty(value, isobj, name)
     end
     n = 0
     if obj ~= false and obj ~= true then
+      local isobject = mt.__name == "Object"
       for k, v in pairs(obj) do
         local prop, n = k:gsub("^set_", "get_"):gsub("^[gs]et_", "")
-        if out[prop] == nil then
-          local space = string.len(prop) < 6 and "\t\t\t= " or "\t\t= "      
+        local space = string.len(prop) < 6 and "\t\t\t= " or "\t\t= "      
+        if isobject and out[prop] == nil then
+          result = result.."\n  "..prop..space..pretty(v, value, k)..","
+        elseif out[prop] == nil then
           result = result.."\n  "..prop..space..pretty(n and value[prop] or v, value, k)..","
-          out[prop] = v
         end
+        out[prop] = v
       end
     end
     result = result.."}"
